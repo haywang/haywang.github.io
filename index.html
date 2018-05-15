@@ -309,6 +309,444 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/vue中使用proxyTable代理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="haywang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端手册">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/15/vue中使用proxyTable代理/" itemprop="url">
+                  vue中使用proxyTable代理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-15 20:10:12 / 修改时间：20:34:22" itemprop="dateCreated datePublished" datetime="2018-05-15T20:10:12+08:00">2018-05-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在项目开发中，必然会遇到跨域问题。比如开发环境是losthost:8080/login，如果要从服务器获取数据啥的，就是<a href="http://www.xxx.com/api/xxx，这样必然获取不到，一般会返回404状态码。" target="_blank" rel="noopener">www.xxx.com/api/xxx，这样必然获取不到，一般会返回404状态码。</a></p>
+<p>开始的时候，我用Charles设置<code>Map Remote</code>，倒也非常方便，唯一有缺点的是平时开着Shadowsocks，会有冲突，导致代理失效。</p>
+<p>后来，查询了vue跨域调试问题，有用Charles的，有用node搭服务器的，有用nginx做反向代理的，有用vue-cli中的<code>http-proxy-middleware</code>。</p>
+<p>在项目中，我就是用vue-cli新建的项目，所以，自然要研究下代理了。</p>
+<p>在/config/index.js中有个proxyTable，默认是空的，没有设置任何代理。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'/login'</span>: &#123;</span><br><span class="line">  target: <span class="string">'http://xxx:12080'</span>, <span class="comment">// 目标域名</span></span><br><span class="line">  changeOrigin: <span class="literal">true</span>,</span><br><span class="line">  pathRewrite: &#123;</span><br><span class="line">    <span class="string">'^/login'</span>: <span class="string">'/yyy/login'</span> <span class="comment">// 规则, 见下面说明</span></span><br><span class="line">  &#125;,</span><br><span class="line">  headers: &#123;</span><br><span class="line">    <span class="comment">//'Cookie': 'SID=810q3nmoi5mfp8geb9bkm9jql0;' //这里可以设置cookies, 也可以不设置</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>这个是一部分的设置，请暂时忽略为何这么做。本地localhost:8080/login，会到服务器上<a href="http://xxx:12080/yyy/login拿数据或者提交数据。" target="_blank" rel="noopener">http://xxx:12080/yyy/login拿数据或者提交数据。</a></p>
+<p>第一行的/login是要匹配本地路由的，不然什么都代理会有些问题，本地的代码就没法调试，这个错误我犯过，所以，本地调试接口，最好弄个特殊的url，比如加入<code>/api</code>。这样只要是匹配上api就进行代理，其它的都正常调试。</p>
+<p>当然，部署到服务器端，可以设置nginx进行反向代理，配置一下conf文件就行，然后<code>nginx -s reload</code>。</p>
+<p>在<code>pathRewrite</code>中，决定是否要重写url，如果不重写，空着就行。本示例中要重写，就改写代理url。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/js中的双感叹号/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="haywang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端手册">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/15/js中的双感叹号/" itemprop="url">
+                  js中的双感叹号
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-15 19:51:33 / 修改时间：20:05:44" itemprop="dateCreated datePublished" datetime="2018-05-15T19:51:33+08:00">2018-05-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>忘记在哪儿看见<code>if(!!test)</code>，当时很好奇为何要用两个感叹号呢，难道不可以直接判断变量的真假吗？跟自己以前写C代码认知不一样。</p>
+<p>后来，查询了相关资料。这个双感叹号相当于对变量转换成boolean值。首先，最近的一个感叹号，对元素进行取反操作，相当于元素转成boolean值，并取反。最远的那个感叹号，相当于取反再取反，负负得正。这样就把元素变成真正的Boolean值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">03.801</span> <span class="keyword">var</span> a=<span class="string">""</span></span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">03.803</span> <span class="literal">undefined</span></span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">14.482</span> !!a</span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">14.485</span> <span class="literal">false</span></span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">28.002</span> a=<span class="string">" "</span></span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">28.005</span> <span class="string">" "</span></span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">45.162</span> !!a</span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">45.165</span> <span class="literal">true</span></span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">56.489</span> a=<span class="number">-1</span></span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">56.494</span> <span class="number">-1</span></span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">59.888</span> !!a</span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">59.890</span> <span class="literal">true</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">04.486</span> a=<span class="number">0</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">04.488</span> <span class="number">0</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">07.865</span> !!a</span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">07.867</span> <span class="literal">false</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">42.495</span> a=<span class="literal">null</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">42.497</span> <span class="literal">null</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">44.626</span> !!a</span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">44.629</span> <span class="literal">false</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">50.668</span> a=<span class="literal">undefined</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">50.674</span> <span class="literal">undefined</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">52.642</span> !!a</span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">52.649</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>从控制台打印的结果来看，null、undefined、0都转换成false，符合正常认知。使用if判断时，可以正常工作，不会出现诡异的问题。其实，这都是JavaScript的弱类型惹的祸，不像C语言那样，编译器会自动进行强制类型转换。这种双感叹号相当于人工进行类型转换，把其它类型转成Boolean类型。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/vue中v-show和v-if的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="haywang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端手册">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/15/vue中v-show和v-if的区别/" itemprop="url">
+                  vue中v-show和v-if的区别
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-15 19:08:21 / 修改时间：19:41:11" itemprop="dateCreated datePublished" datetime="2018-05-15T19:08:21+08:00">2018-05-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>从名字上看，都是控制显示的，今天看一下官网文档，研究下两者到底有什么区别。</p>
+<p>从官网解释来看，<code>v-if</code>是真正的条件渲染，在切换过程中，事件监听和子组件会被销毁和重建，所以切换开销大，它适合很少切换的场合。</p>
+<p><code>v-if</code>有惰性的：如果初始渲染时条件为假，就什么也不做，一直到条件第一次变为真时，才会开始渲染条件快。</p>
+<p>在查看<code>v-if</code>文档时，提到<code>key</code>这一属性，这个属性是控制组件是否复用的。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"loginType === 'username'"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Username<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your username"</span> <span class="attr">key</span>=<span class="string">"username-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your email address"</span> <span class="attr">key</span>=<span class="string">"email-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上面点击按钮进行切换时，如果没有key属性，用户的输入值会一直存在，不会清除用户输入，相当于子组件复用了。但是加入key属性后，切换时会清除输入值，其实这才是符合切换登录方式的习惯。当然，如果用户不输入任何值，只是替换<code>placeholder</code>里的内容。复用时，有个好处就是渲染效率高，不用重新删除/添加元素。</p>
+<p><code>v-show</code>说白了元素一直都在，只是控制元素的CSS属性<code>display: none</code>，所以第一次渲染的开销大。它更适合频繁切换的场合。<strong>注：<code>v-show</code>不支持<code>&lt;template&gt;</code>元素，也不支持<code>v-else</code></strong></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/vue中slot和slot-scope区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1380,7 +1818,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
