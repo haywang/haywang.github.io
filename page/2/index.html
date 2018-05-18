@@ -102,24 +102,23 @@
 
 
 
-  <meta name="description" content="从名字上看，都是控制显示的，今天看一下官网文档，研究下两者到底有什么区别。 从官网解释来看，v-if是真正的条件渲染，在切换过程中，事件监听和子组件会被销毁和重建，所以切换开销大，它适合很少切换的场合。 v-if有惰性的：如果初始渲染时条件为假，就什么也不做，一直到条件第一次变为真时，才会开始渲染条件快。 在查看v-if文档时，提到key这一属性，这个属性是控制组件是否复用的。 12345678&amp;">
-<meta property="og:type" content="article">
-<meta property="og:title" content="vue中v-show和v-if的区别">
-<meta property="og:url" content="http://yoursite.com/2018/05/15/vue中v-show和v-if的区别/index.html">
+  <meta name="description" content="人若无名，便可专心练剑">
+<meta property="og:type" content="website">
+<meta property="og:title" content="前端手册">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="前端手册">
-<meta property="og:description" content="从名字上看，都是控制显示的，今天看一下官网文档，研究下两者到底有什么区别。 从官网解释来看，v-if是真正的条件渲染，在切换过程中，事件监听和子组件会被销毁和重建，所以切换开销大，它适合很少切换的场合。 v-if有惰性的：如果初始渲染时条件为假，就什么也不做，一直到条件第一次变为真时，才会开始渲染条件快。 在查看v-if文档时，提到key这一属性，这个属性是控制组件是否复用的。 12345678&amp;">
+<meta property="og:description" content="人若无名，便可专心练剑">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-15T11:41:11.569Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue中v-show和v-if的区别">
-<meta name="twitter:description" content="从名字上看，都是控制显示的，今天看一下官网文档，研究下两者到底有什么区别。 从官网解释来看，v-if是真正的条件渲染，在切换过程中，事件监听和子组件会被销毁和重建，所以切换开销大，它适合很少切换的场合。 v-if有惰性的：如果初始渲染时条件为假，就什么也不做，一直到条件第一次变为真时，才会开始渲染条件快。 在查看v-if文档时，提到key这一属性，这个属性是控制组件是否复用的。 12345678&amp;">
+<meta name="twitter:title" content="前端手册">
+<meta name="twitter:description" content="人若无名，便可专心练剑">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/15/vue中v-show和v-if的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
 
 
 
@@ -129,7 +128,7 @@
   };
 </script>
 
-  <title>vue中v-show和v-if的区别 | 前端手册</title>
+  <title>前端手册</title>
   
 
 
@@ -176,7 +175,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -292,9 +292,9 @@
           
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/vue中v-show和v-if的区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/08/为什么写技术博客？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="haywang">
@@ -326,7 +326,11 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue中v-show和v-if的区别
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/08/为什么写技术博客？/" itemprop="url">
+                  Hello World
+                </a>
               
             
           </h1>
@@ -351,12 +355,24 @@
                 
               
 
-              <time title="创建时间：2018-05-15 19:08:21 / 修改时间：19:41:11" itemprop="dateCreated datePublished" datetime="2018-05-15T19:08:21+08:00">2018-05-15</time>
+              <time title="创建时间：2018-05-08 12:06:00" itemprop="dateCreated datePublished" datetime="2018-05-08T12:06:00+08:00">2018-05-08</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-10 10:41:10" itemprop="dateModified" datetime="2018-05-10T10:41:10+08:00">2018-05-10</time>
               
             
           </span>
@@ -389,14 +405,15 @@
       
 
       
-        <p>从名字上看，都是控制显示的，今天看一下官网文档，研究下两者到底有什么区别。</p>
-<p>从官网解释来看，<code>v-if</code>是真正的条件渲染，在切换过程中，事件监听和子组件会被销毁和重建，所以切换开销大，它适合很少切换的场合。</p>
-<p><code>v-if</code>有惰性的：如果初始渲染时条件为假，就什么也不做，一直到条件第一次变为真时，才会开始渲染条件快。</p>
-<p>在查看<code>v-if</code>文档时，提到<code>key</code>这一属性，这个属性是控制组件是否复用的。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"loginType === 'username'"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Username<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your username"</span> <span class="attr">key</span>=<span class="string">"username-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your email address"</span> <span class="attr">key</span>=<span class="string">"email-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>上面点击按钮进行切换时，如果没有key属性，用户的输入值会一直存在，不会清除用户输入，相当于子组件复用了。但是加入key属性后，切换时会清除输入值，其实这才是符合切换登录方式的习惯。当然，如果用户不输入任何值，只是替换<code>placeholder</code>里的内容。复用时，有个好处就是渲染效率高，不用重新删除/添加元素。</p>
-<p><code>v-show</code>说白了元素一直都在，只是控制元素的CSS属性<code>display: none</code>，所以第一次渲染的开销大。它更适合频繁切换的场合。<strong>注：<code>v-show</code>不支持<code>&lt;template&gt;</code>元素，也不支持<code>v-else</code></strong></p>
+        
+          
+            <p>在上大学的时候，第一次知道google，从此走上搜索学习的路。可以说google是我的第二个老师，我也从别人的技术博客中获得很多收获，现在写技术博客，就当也分享一下自己的技术收获吧。</p>
+<p>其实最主要的是记录自己的遇到的各种问题，万一下次再次遇到，不用去收藏夹去搜索，节省自己的时间和精力。重复的问题，就不要再费时间了。</p>
+<p>之前，也尝试过其它免费的博客网站，要么一堆广告，要么迟早要广告的，要么是小白无脑吐槽的。其实写博客也挺费精力的，毕竟要组织思路和文章结构，还要贴代码敲字。被一群小白无脑喷，还是不爽。所以，此博客不开通留言评论，反正第三方的评论系统要么被墙，要么停止服务，干脆就不加了，就来个最简单的博客。</p>
+<p>就如这个博客名：前端手册，就是来记录自己的技术成长，仅此而已！既然是手册和新手，那就是所有文章都是琐碎的，并且都是不成熟的。所以，看到简单的，或者无营养的，略过就行，不必较真。有帮助呢，就心里感谢下，没帮助，就点击网页右上角的X，关闭就行。</p>
 
+          
+        
       
     </div>
 
@@ -416,32 +433,12 @@
       
 
       
-      
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/05/10/vue中slot和slot-scope区别/" rel="next" title="vue中slot和slot-scope区别">
-                <i class="fa fa-chevron-left"></i> vue中slot和slot-scope区别
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/15/js中的双感叹号/" rel="prev" title="js中的双感叹号">
-                js中的双感叹号 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -451,19 +448,18 @@
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
           
-
-  
-
-
 
         </div>
         
@@ -664,10 +660,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
-
-
 
   
 

@@ -102,24 +102,24 @@
 
 
 
-  <meta name="description" content="从名字上看，都是控制显示的，今天看一下官网文档，研究下两者到底有什么区别。 从官网解释来看，v-if是真正的条件渲染，在切换过程中，事件监听和子组件会被销毁和重建，所以切换开销大，它适合很少切换的场合。 v-if有惰性的：如果初始渲染时条件为假，就什么也不做，一直到条件第一次变为真时，才会开始渲染条件快。 在查看v-if文档时，提到key这一属性，这个属性是控制组件是否复用的。 12345678&amp;">
+  <meta name="description" content="先说说static和assets目录有什么区别： 我的项目使用vue-cli创建的，在打包的时候，static目录的文件，会被简单拷贝到dist目录。但是assets里的文件会被webpack处理下。比如js或者css文件会被打上7位的hash戳。并且如果图片、视频、字体不超过10KB大小，会转成base64编码，直接加入html文件中，这样可以提高加载速度。 如果文件超过10KB大小，会加上ha">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue中v-show和v-if的区别">
-<meta property="og:url" content="http://yoursite.com/2018/05/15/vue中v-show和v-if的区别/index.html">
+<meta property="og:title" content="vue中背景图片static&#x2F;css&#x2F;static&#x2F;img路径错误">
+<meta property="og:url" content="http://yoursite.com/2018/05/18/vue中背景图片static-css-static-img路径错误/index.html">
 <meta property="og:site_name" content="前端手册">
-<meta property="og:description" content="从名字上看，都是控制显示的，今天看一下官网文档，研究下两者到底有什么区别。 从官网解释来看，v-if是真正的条件渲染，在切换过程中，事件监听和子组件会被销毁和重建，所以切换开销大，它适合很少切换的场合。 v-if有惰性的：如果初始渲染时条件为假，就什么也不做，一直到条件第一次变为真时，才会开始渲染条件快。 在查看v-if文档时，提到key这一属性，这个属性是控制组件是否复用的。 12345678&amp;">
+<meta property="og:description" content="先说说static和assets目录有什么区别： 我的项目使用vue-cli创建的，在打包的时候，static目录的文件，会被简单拷贝到dist目录。但是assets里的文件会被webpack处理下。比如js或者css文件会被打上7位的hash戳。并且如果图片、视频、字体不超过10KB大小，会转成base64编码，直接加入html文件中，这样可以提高加载速度。 如果文件超过10KB大小，会加上ha">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-15T11:41:11.569Z">
+<meta property="og:updated_time" content="2018-05-18T09:36:48.267Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue中v-show和v-if的区别">
-<meta name="twitter:description" content="从名字上看，都是控制显示的，今天看一下官网文档，研究下两者到底有什么区别。 从官网解释来看，v-if是真正的条件渲染，在切换过程中，事件监听和子组件会被销毁和重建，所以切换开销大，它适合很少切换的场合。 v-if有惰性的：如果初始渲染时条件为假，就什么也不做，一直到条件第一次变为真时，才会开始渲染条件快。 在查看v-if文档时，提到key这一属性，这个属性是控制组件是否复用的。 12345678&amp;">
+<meta name="twitter:title" content="vue中背景图片static&#x2F;css&#x2F;static&#x2F;img路径错误">
+<meta name="twitter:description" content="先说说static和assets目录有什么区别： 我的项目使用vue-cli创建的，在打包的时候，static目录的文件，会被简单拷贝到dist目录。但是assets里的文件会被webpack处理下。比如js或者css文件会被打上7位的hash戳。并且如果图片、视频、字体不超过10KB大小，会转成base64编码，直接加入html文件中，这样可以提高加载速度。 如果文件超过10KB大小，会加上ha">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/15/vue中v-show和v-if的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/18/vue中背景图片static-css-static-img路径错误/"/>
 
 
 
@@ -129,7 +129,7 @@
   };
 </script>
 
-  <title>vue中v-show和v-if的区别 | 前端手册</title>
+  <title>vue中背景图片static/css/static/img路径错误 | 前端手册</title>
   
 
 
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/vue中v-show和v-if的区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/vue中背景图片static-css-static-img路径错误/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="haywang">
@@ -326,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue中v-show和v-if的区别
+          <h1 class="post-title" itemprop="name headline">vue中背景图片static/css/static/img路径错误
               
             
           </h1>
@@ -351,7 +351,7 @@
                 
               
 
-              <time title="创建时间：2018-05-15 19:08:21 / 修改时间：19:41:11" itemprop="dateCreated datePublished" datetime="2018-05-15T19:08:21+08:00">2018-05-15</time>
+              <time title="创建时间：2018-05-18 16:52:54 / 修改时间：17:36:48" itemprop="dateCreated datePublished" datetime="2018-05-18T16:52:54+08:00">2018-05-18</time>
             
 
             
@@ -389,13 +389,19 @@
       
 
       
-        <p>从名字上看，都是控制显示的，今天看一下官网文档，研究下两者到底有什么区别。</p>
-<p>从官网解释来看，<code>v-if</code>是真正的条件渲染，在切换过程中，事件监听和子组件会被销毁和重建，所以切换开销大，它适合很少切换的场合。</p>
-<p><code>v-if</code>有惰性的：如果初始渲染时条件为假，就什么也不做，一直到条件第一次变为真时，才会开始渲染条件快。</p>
-<p>在查看<code>v-if</code>文档时，提到<code>key</code>这一属性，这个属性是控制组件是否复用的。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"loginType === 'username'"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Username<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your username"</span> <span class="attr">key</span>=<span class="string">"username-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your email address"</span> <span class="attr">key</span>=<span class="string">"email-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>上面点击按钮进行切换时，如果没有key属性，用户的输入值会一直存在，不会清除用户输入，相当于子组件复用了。但是加入key属性后，切换时会清除输入值，其实这才是符合切换登录方式的习惯。当然，如果用户不输入任何值，只是替换<code>placeholder</code>里的内容。复用时，有个好处就是渲染效率高，不用重新删除/添加元素。</p>
-<p><code>v-show</code>说白了元素一直都在，只是控制元素的CSS属性<code>display: none</code>，所以第一次渲染的开销大。它更适合频繁切换的场合。<strong>注：<code>v-show</code>不支持<code>&lt;template&gt;</code>元素，也不支持<code>v-else</code></strong></p>
+        <p>先说说static和assets目录有什么区别：</p>
+<p>我的项目使用<code>vue-cli</code>创建的，在打包的时候，static目录的文件，会被简单拷贝到<code>dist</code>目录。但是assets里的文件会被webpack处理下。比如js或者css文件会被打上7位的hash戳。并且如果图片、视频、字体不超过10KB大小，会转成base64编码，直接加入html文件中，这样可以提高加载速度。</p>
+<p>如果文件超过10KB大小，会加上hash戳，分别拷贝到<code>dist/static/fonts|img|media</code>目录中。</p>
+<p>先说说<code>vue-cli</code>中build完后，上传到服务器上，会出现找不到js和css文件的404错误。通过浏览器查看错误，发现资源文件的路径在<code>xxx.com/static/xxx.js|xxx.css</code>中，实际的<code>index.html</code>在<code>AAA</code>目录中，理论上应该在html文件同一目录中static寻找js和css文件，也就是相对路径去寻找。</p>
+<p>但是实际上不是，因为在<code>config/index.js</code>配置文件中，<code>build</code>的<code>assetsPublicPath</code>属性是<code>&#39;/&#39;</code>。先说说<code>/</code>和<code>./</code>的区别，前者是绝对路径，后者是相对路径。所以，修改成<code>./</code>就行。</p>
+<p>接着说我遇到的问题：</p>
+<p>在有个<code>div</code>标签中需要设置背景图片<code>background-image: url(../assets/cover.jpg);</code>，大小已经超过10KB。所以，上线后寻找图片的路径在<code>static/css/static/img/cover.eb8f9ba.jpg</code>，从路径上，明显出错了。实际打包后的路径在<code>static/img/cover.eb8f9ba.jpg</code>，既然把图片弄到css路径下，估计是css打包时出错了。</p>
+<p>那为何小图片没问题呢？那是因为把小图片转成base64编码，直接放到html中了。</p>
+<p>通过查找资料，解决这个问题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      coverUrl: &#123; <span class="attr">backgroundImage</span>: <span class="string">`url(<span class="subst">$&#123;<span class="built_in">require</span>(<span class="string">'../assets/cover.jpg'</span>)&#125;</span>)`</span> &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在<code>html</code>文件中设置：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pageLogin"</span> <span class="attr">:style</span>=<span class="string">"coverUrl"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>再打包后就没有问题，可以找到背景图片。</p>
 
       
     </div>
@@ -423,8 +429,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/10/vue中slot和slot-scope区别/" rel="next" title="vue中slot和slot-scope区别">
-                <i class="fa fa-chevron-left"></i> vue中slot和slot-scope区别
+              <a href="/2018/05/15/vue中使用proxyTable代理/" rel="next" title="vue中使用proxyTable代理">
+                <i class="fa fa-chevron-left"></i> vue中使用proxyTable代理
               </a>
             
           </div>
@@ -432,10 +438,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/15/js中的双感叹号/" rel="prev" title="js中的双感叹号">
-                js中的双感叹号 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

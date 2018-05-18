@@ -309,6 +309,158 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/18/vue中背景图片static-css-static-img路径错误/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="haywang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端手册">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/18/vue中背景图片static-css-static-img路径错误/" itemprop="url">
+                  vue中背景图片static/css/static/img路径错误
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-18 16:52:54 / 修改时间：17:36:48" itemprop="dateCreated datePublished" datetime="2018-05-18T16:52:54+08:00">2018-05-18</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>先说说static和assets目录有什么区别：</p>
+<p>我的项目使用<code>vue-cli</code>创建的，在打包的时候，static目录的文件，会被简单拷贝到<code>dist</code>目录。但是assets里的文件会被webpack处理下。比如js或者css文件会被打上7位的hash戳。并且如果图片、视频、字体不超过10KB大小，会转成base64编码，直接加入html文件中，这样可以提高加载速度。</p>
+<p>如果文件超过10KB大小，会加上hash戳，分别拷贝到<code>dist/static/fonts|img|media</code>目录中。</p>
+<p>先说说<code>vue-cli</code>中build完后，上传到服务器上，会出现找不到js和css文件的404错误。通过浏览器查看错误，发现资源文件的路径在<code>xxx.com/static/xxx.js|xxx.css</code>中，实际的<code>index.html</code>在<code>AAA</code>目录中，理论上应该在html文件同一目录中static寻找js和css文件，也就是相对路径去寻找。</p>
+<p>但是实际上不是，因为在<code>config/index.js</code>配置文件中，<code>build</code>的<code>assetsPublicPath</code>属性是<code>&#39;/&#39;</code>。先说说<code>/</code>和<code>./</code>的区别，前者是绝对路径，后者是相对路径。所以，修改成<code>./</code>就行。</p>
+<p>接着说我遇到的问题：</p>
+<p>在有个<code>div</code>标签中需要设置背景图片<code>background-image: url(../assets/cover.jpg);</code>，大小已经超过10KB。所以，上线后寻找图片的路径在<code>static/css/static/img/cover.eb8f9ba.jpg</code>，从路径上，明显出错了。实际打包后的路径在<code>static/img/cover.eb8f9ba.jpg</code>，既然把图片弄到css路径下，估计是css打包时出错了。</p>
+<p>那为何小图片没问题呢？那是因为把小图片转成base64编码，直接放到html中了。</p>
+<p>通过查找资料，解决这个问题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      coverUrl: &#123; <span class="attr">backgroundImage</span>: <span class="string">`url(<span class="subst">$&#123;<span class="built_in">require</span>(<span class="string">'../assets/cover.jpg'</span>)&#125;</span>)`</span> &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后在<code>html</code>文件中设置：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pageLogin"</span> <span class="attr">:style</span>=<span class="string">"coverUrl"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>再打包后就没有问题，可以找到背景图片。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/vue中使用proxyTable代理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1620,164 +1772,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/08/为什么写技术博客？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="haywang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端手册">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/08/为什么写技术博客？/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-08 12:06:00" itemprop="dateCreated datePublished" datetime="2018-05-08T12:06:00+08:00">2018-05-08</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-05-10 10:41:10" itemprop="dateModified" datetime="2018-05-10T10:41:10+08:00">2018-05-10</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在上大学的时候，第一次知道google，从此走上搜索学习的路。可以说google是我的第二个老师，我也从别人的技术博客中获得很多收获，现在写技术博客，就当也分享一下自己的技术收获吧。</p>
-<p>其实最主要的是记录自己的遇到的各种问题，万一下次再次遇到，不用去收藏夹去搜索，节省自己的时间和精力。重复的问题，就不要再费时间了。</p>
-<p>之前，也尝试过其它免费的博客网站，要么一堆广告，要么迟早要广告的，要么是小白无脑吐槽的。其实写博客也挺费精力的，毕竟要组织思路和文章结构，还要贴代码敲字。被一群小白无脑喷，还是不爽。所以，此博客不开通留言评论，反正第三方的评论系统要么被墙，要么停止服务，干脆就不加了，就来个最简单的博客。</p>
-<p>就如这个博客名：前端手册，就是来记录自己的技术成长，仅此而已！既然是手册和新手，那就是所有文章都是琐碎的，并且都是不成熟的。所以，看到简单的，或者无营养的，略过就行，不必较真。有帮助呢，就心里感谢下，没帮助，就点击网页右上角的X，关闭就行。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1818,7 +1819,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
