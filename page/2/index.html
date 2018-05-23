@@ -309,6 +309,151 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/09/vue中绝对引入/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="haywang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端手册">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/09/vue中绝对引入/" itemprop="url">
+                  vue中绝对引入
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-09 20:06:25 / 修改时间：20:23:44" itemprop="dateCreated datePublished" datetime="2018-05-09T20:06:25+08:00">2018-05-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>ESLint使用Airbnb规则检测中，会提示<code>Absolute imports should come before relative imports</code>，当时是在main.js中添加<code>import ElementUI from &#39;element-ui&#39;;</code>顺手就放到<code>import</code>最后一行，然后就出现这个错误。</p>
+<p>然后调换一下引入的位置，就符合检测规则了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> ElementUI <span class="keyword">from</span> <span class="string">'element-ui'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'element-ui/lib/theme-chalk/index.css'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">'./router'</span>;</span><br></pre></td></tr></table></figure>
+<p>其实，用ESLint检查，每次修改起来还是费一点时间的，后面要提高效率，把–fix或者其它自动修复的工具用上。这样缺少分号、逗号、空格之类的可以自动格式化，不用每次手动修改。</p>
+<p>通过检查，可以强制自己统一代码风格，不仅为后来的接手人方便维护，而且自己也会养成良好的编码习惯。之前使用C语言编程，自由惯了，反正IDE也没啥格式化工具，就顺其自然了。现在做前端的工作，接手别人的代码，看见乱七八糟的代码，连想死的心都有了。</p>
+<p>既然别人做不到，那就从自己做起，拿个Airbnb的规则进行约束。虽然严格点，但是基本上符合原来C语言的风格，编码起来也还行，那就加油吧，haywang！</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/08/为什么写技术博客？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -496,7 +641,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

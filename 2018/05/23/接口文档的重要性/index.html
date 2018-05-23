@@ -102,24 +102,24 @@
 
 
 
-  <meta name="description" content="在*.vue文件中，一般会有一个template，在这里可编写模板。即使是一个组件，里面还是有很多个标签，比如标题、正文等，这里只是举个例子。 12345678&amp;lt;template&amp;gt;    &amp;lt;h2&amp;gt;        文章标题    &amp;lt;/h2&amp;gt;    &amp;lt;p&amp;gt;        文章正文    &amp;lt;/p&amp;gt;&amp;lt;/template&amp;gt; 如果像上面这">
+  <meta name="description" content="曾经，我觉得程序员写文档，特别是那种，写完程序后再写什么需求和设计文档，真是浪费时间，就是给评审看的，走走过场而已。 最近接手一个项目，当初页面是后端工程师写的，直接是jsp文件。现在要重构成vue框架，中间呢，有个前端工程师重构了一部分，不过思路还是后端渲染页面，登录部分还是输入用户名和密码后，后端验证通过后进行302跳转，只能说非常蛋疼。 接手的时候，没有任何文档，每次涉及前后端api通信部分">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue中单个根元素">
-<meta property="og:url" content="http://yoursite.com/2018/05/10/vue中单个根元素/index.html">
+<meta property="og:title" content="接口文档的重要性">
+<meta property="og:url" content="http://yoursite.com/2018/05/23/接口文档的重要性/index.html">
 <meta property="og:site_name" content="前端手册">
-<meta property="og:description" content="在*.vue文件中，一般会有一个template，在这里可编写模板。即使是一个组件，里面还是有很多个标签，比如标题、正文等，这里只是举个例子。 12345678&amp;lt;template&amp;gt;    &amp;lt;h2&amp;gt;        文章标题    &amp;lt;/h2&amp;gt;    &amp;lt;p&amp;gt;        文章正文    &amp;lt;/p&amp;gt;&amp;lt;/template&amp;gt; 如果像上面这">
+<meta property="og:description" content="曾经，我觉得程序员写文档，特别是那种，写完程序后再写什么需求和设计文档，真是浪费时间，就是给评审看的，走走过场而已。 最近接手一个项目，当初页面是后端工程师写的，直接是jsp文件。现在要重构成vue框架，中间呢，有个前端工程师重构了一部分，不过思路还是后端渲染页面，登录部分还是输入用户名和密码后，后端验证通过后进行302跳转，只能说非常蛋疼。 接手的时候，没有任何文档，每次涉及前后端api通信部分">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-10T12:41:27.937Z">
+<meta property="og:updated_time" content="2018-05-23T12:08:27.894Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue中单个根元素">
-<meta name="twitter:description" content="在*.vue文件中，一般会有一个template，在这里可编写模板。即使是一个组件，里面还是有很多个标签，比如标题、正文等，这里只是举个例子。 12345678&amp;lt;template&amp;gt;    &amp;lt;h2&amp;gt;        文章标题    &amp;lt;/h2&amp;gt;    &amp;lt;p&amp;gt;        文章正文    &amp;lt;/p&amp;gt;&amp;lt;/template&amp;gt; 如果像上面这">
+<meta name="twitter:title" content="接口文档的重要性">
+<meta name="twitter:description" content="曾经，我觉得程序员写文档，特别是那种，写完程序后再写什么需求和设计文档，真是浪费时间，就是给评审看的，走走过场而已。 最近接手一个项目，当初页面是后端工程师写的，直接是jsp文件。现在要重构成vue框架，中间呢，有个前端工程师重构了一部分，不过思路还是后端渲染页面，登录部分还是输入用户名和密码后，后端验证通过后进行302跳转，只能说非常蛋疼。 接手的时候，没有任何文档，每次涉及前后端api通信部分">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/10/vue中单个根元素/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/23/接口文档的重要性/"/>
 
 
 
@@ -129,7 +129,7 @@
   };
 </script>
 
-  <title>vue中单个根元素 | 前端手册</title>
+  <title>接口文档的重要性 | 前端手册</title>
   
 
 
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/vue中单个根元素/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/23/接口文档的重要性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="haywang">
@@ -326,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue中单个根元素
+          <h1 class="post-title" itemprop="name headline">接口文档的重要性
               
             
           </h1>
@@ -351,7 +351,7 @@
                 
               
 
-              <time title="创建时间：2018-05-10 19:23:02 / 修改时间：20:41:27" itemprop="dateCreated datePublished" datetime="2018-05-10T19:23:02+08:00">2018-05-10</time>
+              <time title="创建时间：2018-05-23 19:39:52 / 修改时间：20:08:27" itemprop="dateCreated datePublished" datetime="2018-05-23T19:39:52+08:00">2018-05-23</time>
             
 
             
@@ -389,10 +389,12 @@
       
 
       
-        <p>在<code>*.vue</code>文件中，一般会有一个template，在这里可编写模板。即使是一个组件，里面还是有很多个标签，比如标题、正文等，这里只是举个例子。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line">        文章标题</span><br><span class="line">    <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        文章正文</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>如果像上面这样写，肯定会出错，会提示<code>every component must have a single root element</code>，意思说每个组件只有一个根元素。刚开始写组件的时候，总是犯这个错误。一般在所有标签外面套一层父标签就行。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line">            文章标题</span><br><span class="line">        <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">            文章正文</span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>    </span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <p>曾经，我觉得程序员写文档，特别是那种，写完程序后再写什么需求和设计文档，真是浪费时间，就是给评审看的，走走过场而已。</p>
+<p>最近接手一个项目，当初页面是后端工程师写的，直接是jsp文件。现在要重构成vue框架，中间呢，有个前端工程师重构了一部分，不过思路还是后端渲染页面，登录部分还是输入用户名和密码后，后端验证通过后进行302跳转，只能说非常蛋疼。</p>
+<p>接手的时候，没有任何文档，每次涉及前后端api通信部分，都是通过Charles抓包和询问曾经做过的后端工程师，效率极其低下，开发进度是蜗牛般的速度。这就像诊断一个病人，需要拿手术刀解剖，然后分析病因，然后再开药方。这时，我觉得有一份文档，哪怕不那么详细也行，至少有个参考部分。中间做的部分重构代码，也无法看，既没有前后端分离的思想，也杂乱无章，还不如按照自己的思路来重写。</p>
+<p>曾经的后端工程师觉得前端太简单，以结果为导向，只要能按时完成任务，页面显示正常就OK，管它模块化，管它可维护，管它接手的前端是否能看懂。虽说当时效率挺高，其实从长远来看，第二个前端工程师重构了部分代码，还是jsp+vue+jQuery组合，可谓是原始代+1代+2代都用到，我只能说我的神啊！</p>
+<p>这次接手，我算是第三个前端工程师，需要重构全部代码，做的非常痛苦。真的体会到让后端工程师写前端，是多么惨痛的代价。还有，全部都是后端工程师去做整个网站，他们之间沟通倒轻松了，但是没有留下任何接口文档。真要去前后端分离，真的是灾难，这时我也体会到CTO或者技术负责人的重要性。当初搭架子的时候，为了得到结果，没有遵循一个统一框架或者架构，后期做的人，真是反复爬坑。</p>
+<p>虽然是吐槽，该做的工作还是要做的。尽量争取好点的程序结构吧，为后来的维护铺条好路，别让自己也被吐槽。</p>
 
       
     </div>
@@ -420,8 +422,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/10/package-lock-json文件到底是干什么的？/" rel="next" title="package-lock.json文件到底是干什么的？">
-                <i class="fa fa-chevron-left"></i> package-lock.json文件到底是干什么的？
+              <a href="/2018/05/18/vue中背景图片static-css-static-img路径错误/" rel="next" title="vue中背景图片static/css/static/img路径错误">
+                <i class="fa fa-chevron-left"></i> vue中背景图片static/css/static/img路径错误
               </a>
             
           </div>
@@ -429,10 +431,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/10/vue中slot和slot-scope区别/" rel="prev" title="vue中slot和slot-scope区别">
-                vue中slot和slot-scope区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
