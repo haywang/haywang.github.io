@@ -309,6 +309,180 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/网站性能之网页速度/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="haywang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端手册">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/28/网站性能之网页速度/" itemprop="url">
+                  网站性能之网页速度
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-28 16:35:20" itemprop="dateCreated datePublished" datetime="2018-08-28T16:35:20+08:00">2018-08-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-29 11:00:09" itemprop="dateModified" datetime="2018-08-29T11:00:09+08:00">2018-08-29</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>已经有3个月没有写技术博客了，期间不停地加班+重复做页面+各种接口调试。扮演前端+人肉测试，所谓人肉测试就是做好页面，手动测试接口。因为用户提交的数据需要从数据库获取，纯白盒测试可能测不了什么问题。最近，稍微有点空闲时间，就静下心来精进自己的技能。</p>
+<p>后面要做的工作有：前端技能（vue的原理相关、JavaScript知识、网络相关）、测试（UI的自动化测试、接口测试等）。等这两个学到一定程度，再学学NodeJs后端知识，毕竟纯前端还是有天花板的。自己的业余项目：儿童编程一直想搞也没搞，趁此机会锻炼下全栈知识。</p>
+<p>我认为，一个人的精力有限，在工作中全栈可能性比较小，在项目紧急的情况下，更是没法一会做前端，一会做后端。那为何要学习后端知识呢？为了更好地做好前端。另外，业余时间有一个自己的项目，既可以锻炼快速开发能力，也可以提高学习兴趣，更有成就感。即使项目挣钱，也是无法跟工作相比的，纯当额外的bonus吧！</p>
+<p>最近订阅左耳朵耗子的专栏，看到推荐的一本在线电子书《Designing for Performance》，链接在此：<a href="http://designingforperformance.com/" target="_blank" rel="noopener">点击查看</a></p>
+<p>之前除了面试时遇到性能问题，后面工作中没怎么关心，正好学习下，以后几篇文章都是根据我的理解进行整理。</p>
+<h2 id="浏览器如何渲染？"><a href="#浏览器如何渲染？" class="headerlink" title="浏览器如何渲染？"></a>浏览器如何渲染？</h2><p><img src="images/page-load-time-cycle.png" alt="page-load-time-cycle"></p>
+<p>用户输入URL后，浏览器会进行DNS查找，找出域名对应的IP地址，在一段时间内浏览器会记住这个IP，这样不用每次都去查找。浏览器连接上服务器后，浏览器会发送请求，服务器会解析并返回数据（包括图像、HTML、CSS、JavaScript或者视频），等下载完后，浏览器就渲染成用户可见的网页。</p>
+<p>那如何衡量服务器响应速度呢？接收第一字节数据的时间，简写TTFB（time to first byte）。开始接收到数据之后，还会慢慢下载图片、CSS、JS文件等，特别是下载JS文件会阻塞渲染。</p>
+<p>其实，接收到数据并不代表用户就可以看见网页，还要等待下载和渲染。浏览器会先解析HTML：把原始的字节数据变成字符串，字符串变成标签比如<code>body</code>，标签再变成拥有属性和规则的对象。最后，这些对象再链接成数据结构。最最后，创建DOM树，以供后面的渲染；在解析HTML时，会下载CSS文件，解析过程跟HTML类似，只是最终变成CSSOM（CSS Object Model）；最终，浏览器会把DOM和CSSOM合成一个渲染树，会计算每个可见元素的大小和位置（<code>display:none</code>不会放进渲染树），使用工具可以创建每隔一定时间的快照。优化方法：异步加载、首页优先请求、缓存静态资源、用户优先的动作最先展示。</p>
+<p>优化的核心思想：减少文件大小和数量，这样总大小会变小。对于图片，可以把小图片合成一个大图片。对于CSS和JS文件，减少数量和改变html中的加载顺序。对于请求，改变请求的数量和大小。</p>
+<p>在连接时，会有DNS解析、连接初始化、SSL握手等，所以这几步中也可以优化，比如云解析、SSL加速等。</p>
+<h2 id="影响网速的几个因素"><a href="#影响网速的几个因素" class="headerlink" title="影响网速的几个因素"></a>影响网速的几个因素</h2><ol>
+<li>地理位置</li>
+</ol>
+<p>在中国访问美国的网站，肯定比在美国访问美国网站慢，毕竟要穿过长长的海底光缆。解决的方法是：CDN，全称：content delivery network。就是在不同地方都放一个文件副本，当用户取数据的时候，就近去，这样用户感觉服务器就在旁边一样，相当于把文件放在用户最近的地方。</p>
+<ol start="2">
+<li>网络</li>
+</ol>
+<p>手机网络的2G、3G和4G网络的网速是不同的，手机网络和宽带也不相同，即使是宽带，共享的长城宽带和电信也不一样。所以，在测试时，尽量模拟不同用户的网络情况，看看网页的加载情况。</p>
+<ol start="3">
+<li>浏览器</li>
+</ol>
+<p>不同的浏览器特性不一样，加载资源的算法也不一样。比如垃圾IE就是一个扶不起的阿斗，多少年依旧如此。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/vue的生命周期/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1650,152 +1824,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/npm安装提示：checkPermissions/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="haywang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端手册">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/10/npm安装提示：checkPermissions/" itemprop="url">
-                  npm安装提示：checkPermissions
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-10 11:04:35 / 修改时间：11:26:11" itemprop="dateCreated datePublished" datetime="2018-05-10T11:04:35+08:00">2018-05-10</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>操作步骤是这样的：在用到axios时，就<code>npm install --save axios</code>，安装完了，就开始调试代码：<code>npm run dev</code>，然后就缺失组件啥的。</p>
-<p>我用<code>git diff</code>查看代码改动了哪些，结果显示没什么问题，改动不多。就想着可能是node_modules依赖包的问题，接着重新安装一下应该没问题。</p>
-<p>不管是淘宝的源，还是淘宝的源，都会显示：<code>checkPermissions Missing write access</code>反正就是安装不了。网上搜索了下，说权限问题，要安装sudo。我的系统是Win10，之前也没有遇到这个问题，我也不想安装乱七八糟的东西，毕竟Windows的尿性在那。</p>
-<p>也有人说要删除node_modules安装包，然后重新安装下。然后我尝试了下，果然解决了。</p>
-<p>其实拿Win10开发前端，有点不太合适。首先，显示问题：我的电脑是1366 X 768，分辨率挺渣的。其次涉及到后端的东西，Windows安装依赖包，还是挺渣的。</p>
-<p>曾经捣腾过黑苹果，自己电脑的渣分辨率和黑苹果的驱动，折磨的不要不要的，真不想搞了。也搞过双系统（Windows+Ubuntu），每次删除某个分区或者新建分区，Ubuntu的启动就废了，又得修复引导，太累。也搞过虚拟机VMWare，那速度挺感人的。现在，换成三星250G固态硬盘，确实比西数128G的硬盘快很多，当然，虚拟机里运行webpack，还是很慢的。编译时，就不能使用其它软件，磁盘活动时间也会达到100%，唯一的好处就是随时可以把虚拟机弄到其它地方。后续准备体验下Docker，这样以后维护服务器会方便很多，此项工作在计划中……</p>
-<p>家里有台MacBook Air，由于轻薄，被老婆用来办公和出差，谁让我心疼老婆呢！</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1843,7 +1871,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
