@@ -309,6 +309,354 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/29/网站性能之HTML和CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="haywang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端手册">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/29/网站性能之HTML和CSS/" itemprop="url">
+                  网站性能之HTML和CSS
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-29 15:20:52 / 修改时间：20:05:58" itemprop="dateCreated datePublished" datetime="2018-08-29T15:20:52+08:00">2018-08-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1、清理HTML"><a href="#1、清理HTML" class="headerlink" title="1、清理HTML"></a>1、清理HTML</h2><ul>
+<li>嵌入或内联样式移到样式表中</li>
+<li>移除不必要的标记或者元素，比如巨多的div，尽量用HTML5的标签</li>
+<li>没用的注释代码</li>
+</ul>
+<h3 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h3><p>标签和id、class尽量有意义，比如login代表登录，left是无意义的。好处是：易读、易测试和易编辑，总之就是易维护，还有文件更小。</p>
+<h3 id="无障碍"><a href="#无障碍" class="headerlink" title="无障碍"></a>无障碍</h3><p>经过语义化和精简后，搜索引擎蜘蛛和浏览器更容易理解网页内容，抓取和渲染速度更快</p>
+<h3 id="框架和网格"><a href="#框架和网格" class="headerlink" title="框架和网格"></a>框架和网格</h3><p>框架是大而全的，实际中很多是用不到的，这个需要自己定制</p>
+<h2 id="2、清理CSS"><a href="#2、清理CSS" class="headerlink" title="2、清理CSS"></a>2、清理CSS</h2><p>清除没用的样式，这个有工具进行检测。</p>
+<p>重合的样式提取出来，设置不同的地方。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.recipe</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#f5f5f5</span>; </span><br><span class="line">  <span class="attribute">border-top</span>: <span class="number">1px</span> <span class="number">#ccc</span> solid; </span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">0</span> <span class="number">0</span>; </span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.comment</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#f5f5f5</span>; </span><br><span class="line">  <span class="attribute">border-top</span>: <span class="number">1px</span> <span class="number">#ccc</span> solid; </span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">9px</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">13px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>修改后</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.recipe</span>, <span class="selector-class">.comment</span> &#123; </span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#f5f5f5</span>; </span><br><span class="line">  <span class="attribute">border-top</span>: <span class="number">1px</span> <span class="number">#ccc</span> solid; </span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.comment</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">9px</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">13px</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>清除样式表中的图片，这部分跟前一篇关于图片的文章内容相同。</p>
+<p>设置特指度高的标签：<code>div#header #main ul li a.toggle { ... }</code>修改后<code>.toggle { ... }</code>，更加简洁易懂不重复。</p>
+<h2 id="3、优化网络字体"><a href="#3、优化网络字体" class="headerlink" title="3、优化网络字体"></a>3、优化网络字体</h2><p>如果用谷歌字体，只用到部分内容，就设置更精确些，比如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href="http://fonts.googleapis.com/css?family=Philosopher </span><br><span class="line">  &amp;subset=cyrillic" rel="stylesheet" /&gt;</span><br><span class="line"></span><br><span class="line">&lt;link href="http://fonts.googleapis.com/css?family=Philosopher </span><br><span class="line">  &amp;text=Howdy" rel="stylesheet" /&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="4、重用颜色"><a href="#4、重用颜色" class="headerlink" title="4、重用颜色"></a>4、重用颜色</h2><p>相当于做个一致性的配色库。</p>
+<h2 id="5、加载顺序"><a href="#5、加载顺序" class="headerlink" title="5、加载顺序"></a>5、加载顺序</h2><p>head中加载样式，body底部加载js，或者异步加载（注意加载的顺序和依赖关系，否则会有问题）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"main.js"</span> <span class="keyword">async</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="6、压缩和gzip"><a href="#6、压缩和gzip" class="headerlink" title="6、压缩和gzip"></a>6、压缩和gzip</h2><p>压缩后，就是一行，所以要保留源文件，不然就没法调试和阅读。另外在反向代理里设置gzip</p>
+<h2 id="7、缓存静态文件"><a href="#7、缓存静态文件" class="headerlink" title="7、缓存静态文件"></a>7、缓存静态文件</h2><p>根据调试经验，浏览器缓存后，刷新页面直接从本地浏览器缓存中获取文件，不会再发起重新请求。设置<code>Expires and Cache-Control: max-age</code>和<code>Last-Modified and ETag</code>，这部分内容还要学习，暂时记录下。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/29/网站性能之图片/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="haywang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端手册">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/29/网站性能之图片/" itemprop="url">
+                  网站性能之图片
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-29 11:03:43 / 修改时间：20:08:05" itemprop="dateCreated datePublished" datetime="2018-08-29T11:03:43+08:00">2018-08-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="images/images-pie.png" alt="图片占比"></p>
+<p>现在的网页设计，基本上都是图片为主，有的甚至是gif动图或者视频。从网页优化的角度来看，肯定是优先考虑图片的大小，这样效果也是很明显的。</p>
+<p>首先是图片格式，不同的格式大小不一样，可以从以下几个方面考虑：</p>
+<ol>
+<li>在不降低图片品质的情况下，能够压缩到多大程度？</li>
+<li>用到几种颜色？</li>
+<li>能不能简化图片？</li>
+<li>需要透明图片吗？</li>
+<li>需要动画吗？尽可能用CSS3代替gif，实在代替不了才用gif</li>
+<li>图片最大显示尺寸？</li>
+<li>图片是否要复用？</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th>用途</th>
+<th>优化方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JPEG</td>
+<td>照片或者彩色图片</td>
+<td>降低品质，导出连续，降噪</td>
+</tr>
+<tr>
+<td>GIF</td>
+<td>动画</td>
+<td>减少仿色和颜色，增加水平模式，减少垂直噪声</td>
+</tr>
+<tr>
+<td>PNG-8</td>
+<td>少量颜色的图片</td>
+<td>减少仿色和颜色，增加水平和垂直模式</td>
+</tr>
+<tr>
+<td>PNG-24</td>
+<td>透明图片</td>
+<td>降噪和减少颜色</td>
+</tr>
+</tbody>
+</table>
+<h3 id="优化方法："><a href="#优化方法：" class="headerlink" title="优化方法："></a>优化方法：</h3><h4 id="进一步压缩"><a href="#进一步压缩" class="headerlink" title="进一步压缩"></a>进一步压缩</h4><p>可以先导出大而全的图片，再用压缩工具进行压缩图片，可以节省空间</p>
+<h4 id="优化图片请求"><a href="#优化图片请求" class="headerlink" title="优化图片请求"></a>优化图片请求</h4><p>几个小图标合成一个大图片，然后在CSS中设置图片位置：<code>background-position</code></p>
+<p>CSS3的优点：处理透明；无图片请求；易于修改</p>
+<p>小图片Base64编码转成URI，相当于把图片放在css中。缺点：不能缓存，增加CSS文件大小。可以把图片作为背景，然后写在样式表中，这样数据可以缓存在样式表中，规避不能缓存的弱点。</p>
+<p>SVG：矢量图片，即使放大也不失真，可以传输小图片获得大图片的效果，在retina屏和非retina屏上的显示效果都好。缺点跟Base64编码的小图片类似。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/网站性能之网页速度/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1537,293 +1885,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/vue中单个根元素/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="haywang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端手册">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/10/vue中单个根元素/" itemprop="url">
-                  vue中单个根元素
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-10 19:23:02 / 修改时间：20:41:27" itemprop="dateCreated datePublished" datetime="2018-05-10T19:23:02+08:00">2018-05-10</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在<code>*.vue</code>文件中，一般会有一个template，在这里可编写模板。即使是一个组件，里面还是有很多个标签，比如标题、正文等，这里只是举个例子。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line">        文章标题</span><br><span class="line">    <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        文章正文</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>如果像上面这样写，肯定会出错，会提示<code>every component must have a single root element</code>，意思说每个组件只有一个根元素。刚开始写组件的时候，总是犯这个错误。一般在所有标签外面套一层父标签就行。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line">            文章标题</span><br><span class="line">        <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">            文章正文</span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>    </span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/package-lock-json文件到底是干什么的？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="haywang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端手册">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/10/package-lock-json文件到底是干什么的？/" itemprop="url">
-                  package-lock.json文件到底是干什么的？
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-10 11:35:20 / 修改时间：11:53:18" itemprop="dateCreated datePublished" datetime="2018-05-10T11:35:20+08:00">2018-05-10</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>参考文档：<a href="https://docs.npmjs.com/files/package-lock.json" target="_blank" rel="noopener">官网说明</a></p>
-<p>修改了<code>node_modules</code>和<code>package.json</code>，都会自动产生<code>package-lock.json</code>文件。<code>package.json</code>记录依赖的包名和版本号，而lock文件记录实际安装的包以及相关依赖包，相当于具体的组织树。</p>
-<p>好处呢：就是保证不同电脑，不同的人，安装npm包，都会根据lock文件来安装，这样不会因为某个依赖包的版本不对，导致程序运行不起来或者有bug。所以呢，git提交时，不用提交<code>node_modules</code>文件夹，一般会提交lock文件，也可以根据diff，查看lock文件的变化。</p>
-<p><code>package-lock.json</code>不能被发布，但是<code>npm-shrinkwarp.json</code>可以，但不推荐这样做。如果同时存在两个文件，lock文件会被忽略。</p>
-<p>文件中的每个关键词定义，可以看官网解释。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1871,7 +1932,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
