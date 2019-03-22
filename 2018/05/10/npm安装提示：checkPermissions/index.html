@@ -102,17 +102,18 @@
 
 
 
-  <meta name="description" content="操作步骤是这样的：在用到axios时，就npm install --save axios，安装完了，就开始调试代码：npm run dev，然后就缺失组件啥的。 我用git diff查看代码改动了哪些，结果显示没什么问题，改动不多。就想着可能是node_modules依赖包的问题，接着重新安装一下应该没问题。 不管是淘宝的源，还是淘宝的源，都会显示：checkPermissions Missing">
+  <meta name="description" content="操作步骤是这样的：在用到axios时，就npm install --save axios，安装完了，就开始调试代码：npm run dev，然后就缺失组件啥的。">
+<meta name="keywords" content="npm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="npm安装提示：checkPermissions">
 <meta property="og:url" content="http://yoursite.com/2018/05/10/npm安装提示：checkPermissions/index.html">
 <meta property="og:site_name" content="前端手册">
-<meta property="og:description" content="操作步骤是这样的：在用到axios时，就npm install --save axios，安装完了，就开始调试代码：npm run dev，然后就缺失组件啥的。 我用git diff查看代码改动了哪些，结果显示没什么问题，改动不多。就想着可能是node_modules依赖包的问题，接着重新安装一下应该没问题。 不管是淘宝的源，还是淘宝的源，都会显示：checkPermissions Missing">
+<meta property="og:description" content="操作步骤是这样的：在用到axios时，就npm install --save axios，安装完了，就开始调试代码：npm run dev，然后就缺失组件啥的。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-10T03:26:11.471Z">
+<meta property="og:updated_time" content="2019-03-22T03:54:43.918Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm安装提示：checkPermissions">
-<meta name="twitter:description" content="操作步骤是这样的：在用到axios时，就npm install --save axios，安装完了，就开始调试代码：npm run dev，然后就缺失组件啥的。 我用git diff查看代码改动了哪些，结果显示没什么问题，改动不多。就想着可能是node_modules依赖包的问题，接着重新安装一下应该没问题。 不管是淘宝的源，还是淘宝的源，都会显示：checkPermissions Missing">
+<meta name="twitter:description" content="操作步骤是这样的：在用到axios时，就npm install --save axios，安装完了，就开始调试代码：npm run dev，然后就缺失组件啥的。">
 
 
 
@@ -224,22 +225,6 @@
         
         
           
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
-  </li>
-        
-        
-        
-          
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
@@ -256,9 +241,17 @@
         
         
           
-          <li class="menu-item menu-item-schedule">
-    <a href="/schedule/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
   </li>
 
       
@@ -351,16 +344,30 @@
                 
               
 
-              <time title="创建时间：2018-05-10 11:04:35 / 修改时间：11:26:11" itemprop="dateCreated datePublished" datetime="2018-05-10T11:04:35+08:00">2018-05-10</time>
+              <time title="创建时间：2018-05-10 11:04:35" itemprop="dateCreated datePublished" datetime="2018-05-10T11:04:35+08:00">2018-05-10</time>
             
 
-            
-              
-
-              
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/工具/" itemprop="url" rel="index"><span itemprop="name">工具</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -390,6 +397,7 @@
 
       
         <p>操作步骤是这样的：在用到axios时，就<code>npm install --save axios</code>，安装完了，就开始调试代码：<code>npm run dev</code>，然后就缺失组件啥的。</p>
+<a id="more"></a>
 <p>我用<code>git diff</code>查看代码改动了哪些，结果显示没什么问题，改动不多。就想着可能是node_modules依赖包的问题，接着重新安装一下应该没问题。</p>
 <p>不管是淘宝的源，还是淘宝的源，都会显示：<code>checkPermissions Missing write access</code>反正就是安装不了。网上搜索了下，说权限问题，要安装sudo。我的系统是Win10，之前也没有遇到这个问题，我也不想安装乱七八糟的东西，毕竟Windows的尿性在那。</p>
 <p>也有人说要删除node_modules安装包，然后重新安装下。然后我尝试了下，果然解决了。</p>
@@ -413,6 +421,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/npm/" rel="tag"># npm</a>
+          
+        </div>
       
 
       
@@ -500,14 +514,68 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
             </nav>
           
@@ -544,7 +612,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

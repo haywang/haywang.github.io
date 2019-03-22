@@ -102,17 +102,18 @@
 
 
 
-  <meta name="description" content="插槽内容先说slot，中文译名是插槽。 比如在子组件&amp;lt;navigation-link&amp;gt;中代码如下： 123456&amp;lt;a   v-bind:href=&quot;url&quot;   class=&quot;nav-link&quot;&amp;gt;    &amp;lt;slot&amp;gt;&amp;lt;/slot&amp;gt;&amp;lt;/a&amp;gt; 然后在合成组件中是这样的： 123&amp;lt;navigation-link url=&quot;/profile">
+  <meta name="description" content="插槽内容先说slot，中文译名是插槽。">
+<meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue中slot和slot-scope区别">
 <meta property="og:url" content="http://yoursite.com/2018/05/10/vue中slot和slot-scope区别/index.html">
 <meta property="og:site_name" content="前端手册">
-<meta property="og:description" content="插槽内容先说slot，中文译名是插槽。 比如在子组件&amp;lt;navigation-link&amp;gt;中代码如下： 123456&amp;lt;a   v-bind:href=&quot;url&quot;   class=&quot;nav-link&quot;&amp;gt;    &amp;lt;slot&amp;gt;&amp;lt;/slot&amp;gt;&amp;lt;/a&amp;gt; 然后在合成组件中是这样的： 123&amp;lt;navigation-link url=&quot;/profile">
+<meta property="og:description" content="插槽内容先说slot，中文译名是插槽。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-10T12:36:59.415Z">
+<meta property="og:updated_time" content="2019-03-22T03:52:54.470Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue中slot和slot-scope区别">
-<meta name="twitter:description" content="插槽内容先说slot，中文译名是插槽。 比如在子组件&amp;lt;navigation-link&amp;gt;中代码如下： 123456&amp;lt;a   v-bind:href=&quot;url&quot;   class=&quot;nav-link&quot;&amp;gt;    &amp;lt;slot&amp;gt;&amp;lt;/slot&amp;gt;&amp;lt;/a&amp;gt; 然后在合成组件中是这样的： 123&amp;lt;navigation-link url=&quot;/profile">
+<meta name="twitter:description" content="插槽内容先说slot，中文译名是插槽。">
 
 
 
@@ -224,22 +225,6 @@
         
         
           
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
-  </li>
-        
-        
-        
-          
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
@@ -256,9 +241,17 @@
         
         
           
-          <li class="menu-item menu-item-schedule">
-    <a href="/schedule/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
   </li>
 
       
@@ -351,16 +344,30 @@
                 
               
 
-              <time title="创建时间：2018-05-10 19:38:30 / 修改时间：20:36:59" itemprop="dateCreated datePublished" datetime="2018-05-10T19:38:30+08:00">2018-05-10</time>
+              <time title="创建时间：2018-05-10 19:38:30" itemprop="dateCreated datePublished" datetime="2018-05-10T19:38:30+08:00">2018-05-10</time>
             
 
-            
-              
-
-              
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/框架/" itemprop="url" rel="index"><span itemprop="name">框架</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -390,6 +397,7 @@
 
       
         <h2 id="插槽内容"><a href="#插槽内容" class="headerlink" title="插槽内容"></a>插槽内容</h2><p>先说slot，中文译名是插槽。</p>
+<a id="more"></a>
 <p>比如在子组件<code>&lt;navigation-link&gt;</code>中代码如下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span></span></span><br><span class="line"><span class="tag">   <span class="attr">v-bind:href</span>=<span class="string">"url"</span></span></span><br><span class="line"><span class="tag">   <span class="attr">class</span>=<span class="string">"nav-link"</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>然后在合成组件中是这样的：</p>
@@ -432,6 +440,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
+          
+        </div>
       
 
       
@@ -528,14 +542,68 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
             </nav>
           
@@ -588,7 +656,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

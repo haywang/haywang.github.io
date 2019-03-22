@@ -224,22 +224,6 @@
         
         
           
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
-  </li>
-        
-        
-        
-          
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
@@ -256,9 +240,17 @@
         
         
           
-          <li class="menu-item menu-item-schedule">
-    <a href="/schedule/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
   </li>
 
       
@@ -293,6 +285,142 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/22/测试页面/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="haywang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端手册">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/22/测试页面/" itemprop="url">
+                  测试页面
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-22 09:49:13" itemprop="dateCreated datePublished" datetime="2019-02-22T09:49:13+08:00">2019-02-22</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>测试</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -355,16 +483,30 @@
                 
               
 
-              <time title="创建时间：2018-08-29 15:20:52 / 修改时间：20:05:58" itemprop="dateCreated datePublished" datetime="2018-08-29T15:20:52+08:00">2018-08-29</time>
+              <time title="创建时间：2018-08-29 15:20:52" itemprop="dateCreated datePublished" datetime="2018-08-29T15:20:52+08:00">2018-08-29</time>
             
 
-            
-              
-
-              
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -394,31 +536,18 @@
 
       
         
-          
-            <h2 id="1、清理HTML"><a href="#1、清理HTML" class="headerlink" title="1、清理HTML"></a>1、清理HTML</h2><ul>
+          <h2 id="1、清理HTML"><a href="#1、清理HTML" class="headerlink" title="1、清理HTML"></a>1、清理HTML</h2><ul>
 <li>嵌入或内联样式移到样式表中</li>
 <li>移除不必要的标记或者元素，比如巨多的div，尽量用HTML5的标签</li>
 <li>没用的注释代码</li>
 </ul>
-<h3 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h3><p>标签和id、class尽量有意义，比如login代表登录，left是无意义的。好处是：易读、易测试和易编辑，总之就是易维护，还有文件更小。</p>
-<h3 id="无障碍"><a href="#无障碍" class="headerlink" title="无障碍"></a>无障碍</h3><p>经过语义化和精简后，搜索引擎蜘蛛和浏览器更容易理解网页内容，抓取和渲染速度更快</p>
-<h3 id="框架和网格"><a href="#框架和网格" class="headerlink" title="框架和网格"></a>框架和网格</h3><p>框架是大而全的，实际中很多是用不到的，这个需要自己定制</p>
-<h2 id="2、清理CSS"><a href="#2、清理CSS" class="headerlink" title="2、清理CSS"></a>2、清理CSS</h2><p>清除没用的样式，这个有工具进行检测。</p>
-<p>重合的样式提取出来，设置不同的地方。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.recipe</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#f5f5f5</span>; </span><br><span class="line">  <span class="attribute">border-top</span>: <span class="number">1px</span> <span class="number">#ccc</span> solid; </span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">0</span> <span class="number">0</span>; </span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.comment</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#f5f5f5</span>; </span><br><span class="line">  <span class="attribute">border-top</span>: <span class="number">1px</span> <span class="number">#ccc</span> solid; </span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">9px</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">13px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>修改后</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.recipe</span>, <span class="selector-class">.comment</span> &#123; </span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#f5f5f5</span>; </span><br><span class="line">  <span class="attribute">border-top</span>: <span class="number">1px</span> <span class="number">#ccc</span> solid; </span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.comment</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">9px</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">13px</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>清除样式表中的图片，这部分跟前一篇关于图片的文章内容相同。</p>
-<p>设置特指度高的标签：<code>div#header #main ul li a.toggle { ... }</code>修改后<code>.toggle { ... }</code>，更加简洁易懂不重复。</p>
-<h2 id="3、优化网络字体"><a href="#3、优化网络字体" class="headerlink" title="3、优化网络字体"></a>3、优化网络字体</h2><p>如果用谷歌字体，只用到部分内容，就设置更精确些，比如：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href="http://fonts.googleapis.com/css?family=Philosopher </span><br><span class="line">  &amp;subset=cyrillic" rel="stylesheet" /&gt;</span><br><span class="line"></span><br><span class="line">&lt;link href="http://fonts.googleapis.com/css?family=Philosopher </span><br><span class="line">  &amp;text=Howdy" rel="stylesheet" /&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="4、重用颜色"><a href="#4、重用颜色" class="headerlink" title="4、重用颜色"></a>4、重用颜色</h2><p>相当于做个一致性的配色库。</p>
-<h2 id="5、加载顺序"><a href="#5、加载顺序" class="headerlink" title="5、加载顺序"></a>5、加载顺序</h2><p>head中加载样式，body底部加载js，或者异步加载（注意加载的顺序和依赖关系，否则会有问题）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"main.js"</span> <span class="keyword">async</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="6、压缩和gzip"><a href="#6、压缩和gzip" class="headerlink" title="6、压缩和gzip"></a>6、压缩和gzip</h2><p>压缩后，就是一行，所以要保留源文件，不然就没法调试和阅读。另外在反向代理里设置gzip</p>
-<h2 id="7、缓存静态文件"><a href="#7、缓存静态文件" class="headerlink" title="7、缓存静态文件"></a>7、缓存静态文件</h2><p>根据调试经验，浏览器缓存后，刷新页面直接从本地浏览器缓存中获取文件，不会再发起重新请求。设置<code>Expires and Cache-Control: max-age</code>和<code>Last-Modified and ETag</code>，这部分内容还要学习，暂时记录下。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/29/网站性能之HTML和CSS/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -516,16 +645,30 @@
                 
               
 
-              <time title="创建时间：2018-08-29 11:03:43 / 修改时间：20:08:05" itemprop="dateCreated datePublished" datetime="2018-08-29T11:03:43+08:00">2018-08-29</time>
+              <time title="创建时间：2018-08-29 11:03:43" itemprop="dateCreated datePublished" datetime="2018-08-29T11:03:43+08:00">2018-08-29</time>
             
 
-            
-              
-
-              
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -555,57 +698,15 @@
 
       
         
-          
-            <p><img src="images/images-pie.png" alt="图片占比"></p>
+          <p><img src="images/images-pie.png" alt="图片占比"></p>
 <p>现在的网页设计，基本上都是图片为主，有的甚至是gif动图或者视频。从网页优化的角度来看，肯定是优先考虑图片的大小，这样效果也是很明显的。</p>
-<p>首先是图片格式，不同的格式大小不一样，可以从以下几个方面考虑：</p>
-<ol>
-<li>在不降低图片品质的情况下，能够压缩到多大程度？</li>
-<li>用到几种颜色？</li>
-<li>能不能简化图片？</li>
-<li>需要透明图片吗？</li>
-<li>需要动画吗？尽可能用CSS3代替gif，实在代替不了才用gif</li>
-<li>图片最大显示尺寸？</li>
-<li>图片是否要复用？</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>格式</th>
-<th>用途</th>
-<th>优化方法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>JPEG</td>
-<td>照片或者彩色图片</td>
-<td>降低品质，导出连续，降噪</td>
-</tr>
-<tr>
-<td>GIF</td>
-<td>动画</td>
-<td>减少仿色和颜色，增加水平模式，减少垂直噪声</td>
-</tr>
-<tr>
-<td>PNG-8</td>
-<td>少量颜色的图片</td>
-<td>减少仿色和颜色，增加水平和垂直模式</td>
-</tr>
-<tr>
-<td>PNG-24</td>
-<td>透明图片</td>
-<td>降噪和减少颜色</td>
-</tr>
-</tbody>
-</table>
-<h3 id="优化方法："><a href="#优化方法：" class="headerlink" title="优化方法："></a>优化方法：</h3><h4 id="进一步压缩"><a href="#进一步压缩" class="headerlink" title="进一步压缩"></a>进一步压缩</h4><p>可以先导出大而全的图片，再用压缩工具进行压缩图片，可以节省空间</p>
-<h4 id="优化图片请求"><a href="#优化图片请求" class="headerlink" title="优化图片请求"></a>优化图片请求</h4><p>几个小图标合成一个大图片，然后在CSS中设置图片位置：<code>background-position</code></p>
-<p>CSS3的优点：处理透明；无图片请求；易于修改</p>
-<p>小图片Base64编码转成URI，相当于把图片放在css中。缺点：不能缓存，增加CSS文件大小。可以把图片作为背景，然后写在样式表中，这样数据可以缓存在样式表中，规避不能缓存的弱点。</p>
-<p>SVG：矢量图片，即使放大也不失真，可以传输小图片获得大图片的效果，在retina屏和非retina屏上的显示效果都好。缺点跟Base64编码的小图片类似。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/29/网站性能之图片/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -707,24 +808,184 @@
             
 
             
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>最近不停地加班+重复做页面+各种接口调试。扮演前端+人肉测试，所谓人肉测试就是做好页面，手动测试接口。因为用户提交的数据需要从数据库获取，纯白盒测试可能测不了什么问题。稍微有点空闲时间，就静下心来精进自己的技能。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/28/网站性能之网页速度/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/16/提高github的访问速度/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="haywang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端手册">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/16/提高github的访问速度/" itemprop="url">
+                  提高github的访问速度
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
               
 
               
                 
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-08-29 11:00:09" itemprop="dateModified" datetime="2018-08-29T11:00:09+08:00">2018-08-29</time>
               
+
+              <time title="创建时间：2018-06-16 10:00:49" itemprop="dateCreated datePublished" datetime="2018-06-16T10:00:49+08:00">2018-06-16</time>
+            
+
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/效率/" itemprop="url" rel="index"><span itemprop="name">效率</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -755,31 +1016,173 @@
       
         
           
-            <p>已经有3个月没有写技术博客了，期间不停地加班+重复做页面+各种接口调试。扮演前端+人肉测试，所谓人肉测试就是做好页面，手动测试接口。因为用户提交的数据需要从数据库获取，纯白盒测试可能测不了什么问题。最近，稍微有点空闲时间，就静下心来精进自己的技能。</p>
-<p>后面要做的工作有：前端技能（vue的原理相关、JavaScript知识、网络相关）、测试（UI的自动化测试、接口测试等）。等这两个学到一定程度，再学学NodeJs后端知识，毕竟纯前端还是有天花板的。自己的业余项目：儿童编程一直想搞也没搞，趁此机会锻炼下全栈知识。</p>
-<p>我认为，一个人的精力有限，在工作中全栈可能性比较小，在项目紧急的情况下，更是没法一会做前端，一会做后端。那为何要学习后端知识呢？为了更好地做好前端。另外，业余时间有一个自己的项目，既可以锻炼快速开发能力，也可以提高学习兴趣，更有成就感。即使项目挣钱，也是无法跟工作相比的，纯当额外的bonus吧！</p>
-<p>最近订阅左耳朵耗子的专栏，看到推荐的一本在线电子书《Designing for Performance》，链接在此：<a href="http://designingforperformance.com/" target="_blank" rel="noopener">点击查看</a></p>
-<p>之前除了面试时遇到性能问题，后面工作中没怎么关心，正好学习下，以后几篇文章都是根据我的理解进行整理。</p>
-<h2 id="浏览器如何渲染？"><a href="#浏览器如何渲染？" class="headerlink" title="浏览器如何渲染？"></a>浏览器如何渲染？</h2><p><img src="images/page-load-time-cycle.png" alt="page-load-time-cycle"></p>
-<p>用户输入URL后，浏览器会进行DNS查找，找出域名对应的IP地址，在一段时间内浏览器会记住这个IP，这样不用每次都去查找。浏览器连接上服务器后，浏览器会发送请求，服务器会解析并返回数据（包括图像、HTML、CSS、JavaScript或者视频），等下载完后，浏览器就渲染成用户可见的网页。</p>
-<p>那如何衡量服务器响应速度呢？接收第一字节数据的时间，简写TTFB（time to first byte）。开始接收到数据之后，还会慢慢下载图片、CSS、JS文件等，特别是下载JS文件会阻塞渲染。</p>
-<p>其实，接收到数据并不代表用户就可以看见网页，还要等待下载和渲染。浏览器会先解析HTML：把原始的字节数据变成字符串，字符串变成标签比如<code>body</code>，标签再变成拥有属性和规则的对象。最后，这些对象再链接成数据结构。最最后，创建DOM树，以供后面的渲染；在解析HTML时，会下载CSS文件，解析过程跟HTML类似，只是最终变成CSSOM（CSS Object Model）；最终，浏览器会把DOM和CSSOM合成一个渲染树，会计算每个可见元素的大小和位置（<code>display:none</code>不会放进渲染树），使用工具可以创建每隔一定时间的快照。优化方法：异步加载、首页优先请求、缓存静态资源、用户优先的动作最先展示。</p>
-<p>优化的核心思想：减少文件大小和数量，这样总大小会变小。对于图片，可以把小图片合成一个大图片。对于CSS和JS文件，减少数量和改变html中的加载顺序。对于请求，改变请求的数量和大小。</p>
-<p>在连接时，会有DNS解析、连接初始化、SSL握手等，所以这几步中也可以优化，比如云解析、SSL加速等。</p>
-<h2 id="影响网速的几个因素"><a href="#影响网速的几个因素" class="headerlink" title="影响网速的几个因素"></a>影响网速的几个因素</h2><ol>
-<li>地理位置</li>
-</ol>
-<p>在中国访问美国的网站，肯定比在美国访问美国网站慢，毕竟要穿过长长的海底光缆。解决的方法是：CDN，全称：content delivery network。就是在不同地方都放一个文件副本，当用户取数据的时候，就近去，这样用户感觉服务器就在旁边一样，相当于把文件放在用户最近的地方。</p>
-<ol start="2">
-<li>网络</li>
-</ol>
-<p>手机网络的2G、3G和4G网络的网速是不同的，手机网络和宽带也不相同，即使是宽带，共享的长城宽带和电信也不一样。所以，在测试时，尽量模拟不同用户的网络情况，看看网页的加载情况。</p>
-<ol start="3">
-<li>浏览器</li>
-</ol>
-<p>不同的浏览器特性不一样，加载资源的算法也不一样。比如垃圾IE就是一个扶不起的阿斗，多少年依旧如此。</p>
+            <h3 id="为什么访问速度慢？"><a href="#为什么访问速度慢？" class="headerlink" title="为什么访问速度慢？"></a>为什么访问速度慢？</h3><p>这个原因就不用说了，你我都懂的，单单访问github主页还凑合，当然也有点慢。由于伟大的Q，对DNS解析进行污染，不管是访问还是<code>push</code>都会龟速。私有项目用gitlab多一些，github用的少，主要是速度慢，并且收费。但是学习别人的开源项目会用到，还是设置下为好。</p>
+<h3 id="如何提速？"><a href="#如何提速？" class="headerlink" title="如何提速？"></a>如何提速？</h3><p>绕过DNS解析，直接通过hosts解析，反正github一时半会也不会换IP地址。</p>
+<p>记事本打开:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Windows\System32\drivers\etc\hosts</span><br></pre></td></tr></table></figure>
+<p>最末尾添加两句话:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">151.101.72.249 http://global-ssl.fastly.Net</span><br><span class="line">192.30.253.112 http://github.com</span><br></pre></td></tr></table></figure>
+<p>添加后，访问主页速度快很多，<code>push</code>代码也快很多，感觉至少提速10倍</p>
 
           
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/05/JS中判断数组的几种方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="haywang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端手册">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/05/JS中判断数组的几种方法/" itemprop="url">
+                  JS中判断数组的几种方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-05 16:57:06" itemprop="dateCreated datePublished" datetime="2018-06-05T16:57:06+08:00">2018-06-05</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/语言/" itemprop="url" rel="index"><span itemprop="name">语言</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>最近调试接口，大多数返回数组类型，但是有时候又没有此项数据，那就是undefined。如果此时使用数组的方法会报错，导致异常处理，影响页面渲染。要么接口规范化，要么前端自己进行校验，不然程序没有健壮性。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/05/JS中判断数组的几种方法/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -881,24 +1284,26 @@
             
 
             
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-12 16:15:06" itemprop="dateModified" datetime="2018-06-12T16:15:06+08:00">2018-06-12</time>
-              
-            
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/框架/" itemprop="url" rel="index"><span itemprop="name">框架</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -928,27 +1333,14 @@
 
       
         
-          
-            <p>最近写前端代码，遇到vue的钩子函数，从官网上找到这张图片：</p>
-<p><img src="images/lifecycle.png" alt="生命周期"></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">'HelloWorld'</span>,</span><br><span class="line">  data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      msg: <span class="string">'Hello World'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeCreate()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'beforeCreate'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'el  :'</span>+<span class="keyword">this</span>.$el);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'data:'</span>+<span class="keyword">this</span>.$data);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'msg :'</span>+<span class="keyword">this</span>.msg);</span><br><span class="line">  &#125;,</span><br><span class="line">  created()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'created'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'el  :'</span>+<span class="keyword">this</span>.$el);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'data:'</span>+<span class="keyword">this</span>.$data);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'msg :'</span>+<span class="keyword">this</span>.msg);</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeMount()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'beforeMount'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'el  :'</span>+<span class="keyword">this</span>.$el);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'data:'</span>+<span class="keyword">this</span>.$data);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'msg :'</span>+<span class="keyword">this</span>.msg);</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'mounted'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'el  :'</span>+<span class="keyword">this</span>.$el);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'data:'</span>+<span class="keyword">this</span>.$data);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'msg :'</span>+<span class="keyword">this</span>.msg);</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeUpdate()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'beforeUpdate'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'el  :'</span>+<span class="keyword">this</span>.$el);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'data:'</span>+<span class="keyword">this</span>.$data);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'msg :'</span>+<span class="keyword">this</span>.msg);</span><br><span class="line">  &#125;,</span><br><span class="line">  updated()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'updated'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'el  :'</span>+<span class="keyword">this</span>.$el);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'data:'</span>+<span class="keyword">this</span>.$data);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'msg :'</span>+<span class="keyword">this</span>.msg);</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeDestroy()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'beforeDestroy'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'el  :'</span>+<span class="keyword">this</span>.$el);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'data:'</span>+<span class="keyword">this</span>.$data);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'msg :'</span>+<span class="keyword">this</span>.msg);</span><br><span class="line">  &#125;,</span><br><span class="line">  destroyed()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'destroyed'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'el  :'</span>+<span class="keyword">this</span>.$el);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'data:'</span>+<span class="keyword">this</span>.$data);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'msg :'</span>+<span class="keyword">this</span>.msg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面是测试代码，就是不同的阶段，打印不同的信息。先解释下几个重要属性：</p>
-<p>参考链接：<a href="https://cn.vuejs.org/v2/api/" target="_blank" rel="noopener">官方API</a></p>
-<p>$el：Vue实例使用的根DOM元素</p>
-<p>$data：Vue实例观察的数据对象，实例代理了对其data对象属性的访问</p>
-<p>msg：就是data函数中的返回值msg</p>
-<p><img src="images/lifecycle-log.png" alt="打印结果"></p>
-<p>在beforeCreate阶段：el和data都没有初始化</p>
-<p>在created阶段：data数据初始化了，但是el没有初始化</p>
-<p>在beforeMount阶段：el没有初始化（<strong>这部分还有疑问：应该初始化了，但是没有绑定数据，还需要看vue源码。可能是我使用的vue-cli建立工程的原因</strong>）</p>
-<p>在mounted阶段：数据就渲染进DOM了</p>
-<p><img src="images/lifecycle-update.png" alt="更新数据"></p>
-<p>使用vue的调试工具直接修改msg，发现在beforeUpdate和updated阶段：msg和DOM都改变了，暂时不知道两个阶段有什么区别，等分析了vue的源码后才能知道区别。</p>
-<p><img src="images/lifecycle-destroy.png" alt="销毁"></p>
-<p>在控制台中输入：<code>$vm.$destroy()</code>，这时在vue调试工具中看不到绑定的msg和元素节点，但是浏览器中还是会显示原来的元素，并没有从DOM中移除。</p>
-<p>从上面来看，可以在beforeCreate和created之间加载进度条，或者做一些数据初始化。在mounted中可以发起请求，反正这时绑定的数据已经显示，等待数据的时候不影响用户体验。在beforeDestroy中可以询问用户是否删除xx，这样可以灵活地在生命周期的各个阶段做不同的事情。</p>
-
-          
+          <p>最近写前端代码，遇到vue的钩子函数，从官网上找到这张图片：</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/01/vue的生命周期/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1046,16 +1438,30 @@
                 
               
 
-              <time title="创建时间：2018-05-23 19:39:52 / 修改时间：20:08:27" itemprop="dateCreated datePublished" datetime="2018-05-23T19:39:52+08:00">2018-05-23</time>
+              <time title="创建时间：2018-05-23 19:39:52" itemprop="dateCreated datePublished" datetime="2018-05-23T19:39:52+08:00">2018-05-23</time>
             
 
-            
-              
-
-              
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂谈/" itemprop="url" rel="index"><span itemprop="name">杂谈</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1085,15 +1491,15 @@
 
       
         
-          
-            <p>曾经，我觉得程序员写文档，特别是那种，写完程序后再写什么需求和设计文档，真是浪费时间，就是给评审看的，走走过场而已。</p>
+          <p>曾经，我觉得程序员写文档，特别是那种，写完程序后再写什么需求和设计文档，真是浪费时间，就是给评审看的，走走过场而已。</p>
 <p>最近接手一个项目，当初页面是后端工程师写的，直接是jsp文件。现在要重构成vue框架，中间呢，有个前端工程师重构了一部分，不过思路还是后端渲染页面，登录部分还是输入用户名和密码后，后端验证通过后进行302跳转，只能说非常蛋疼。</p>
-<p>接手的时候，没有任何文档，每次涉及前后端api通信部分，都是通过Charles抓包和询问曾经做过的后端工程师，效率极其低下，开发进度是蜗牛般的速度。这就像诊断一个病人，需要拿手术刀解剖，然后分析病因，然后再开药方。这时，我觉得有一份文档，哪怕不那么详细也行，至少有个参考部分。中间做的部分重构代码，也无法看，既没有前后端分离的思想，也杂乱无章，还不如按照自己的思路来重写。</p>
-<p>曾经的后端工程师觉得前端太简单，以结果为导向，只要能按时完成任务，页面显示正常就OK，管它模块化，管它可维护，管它接手的前端是否能看懂。虽说当时效率挺高，其实从长远来看，第二个前端工程师重构了部分代码，还是jsp+vue+jQuery组合，可谓是原始代+1代+2代都用到，我只能说我的神啊！</p>
-<p>这次接手，我算是第三个前端工程师，需要重构全部代码，做的非常痛苦。真的体会到让后端工程师写前端，是多么惨痛的代价。还有，全部都是后端工程师去做整个网站，他们之间沟通倒轻松了，但是没有留下任何接口文档。真要去前后端分离，真的是灾难，这时我也体会到CTO或者技术负责人的重要性。当初搭架子的时候，为了得到结果，没有遵循一个统一框架或者架构，后期做的人，真是反复爬坑。</p>
-<p>虽然是吐槽，该做的工作还是要做的。尽量争取好点的程序结构吧，为后来的维护铺条好路，别让自己也被吐槽。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/23/接口文档的重要性/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1191,16 +1597,30 @@
                 
               
 
-              <time title="创建时间：2018-05-18 16:52:54 / 修改时间：17:36:48" itemprop="dateCreated datePublished" datetime="2018-05-18T16:52:54+08:00">2018-05-18</time>
+              <time title="创建时间：2018-05-18 16:52:54" itemprop="dateCreated datePublished" datetime="2018-05-18T16:52:54+08:00">2018-05-18</time>
             
 
-            
-              
-
-              
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/框架/" itemprop="url" rel="index"><span itemprop="name">框架</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1230,22 +1650,14 @@
 
       
         
-          
-            <p>先说说static和assets目录有什么区别：</p>
-<p>我的项目使用<code>vue-cli</code>创建的，在打包的时候，static目录的文件，会被简单拷贝到<code>dist</code>目录。但是assets里的文件会被webpack处理下。比如js或者css文件会被打上7位的hash戳。并且如果图片、视频、字体不超过10KB大小，会转成base64编码，直接加入html文件中，这样可以提高加载速度。</p>
-<p>如果文件超过10KB大小，会加上hash戳，分别拷贝到<code>dist/static/fonts|img|media</code>目录中。</p>
-<p>先说说<code>vue-cli</code>中build完后，上传到服务器上，会出现找不到js和css文件的404错误。通过浏览器查看错误，发现资源文件的路径在<code>xxx.com/static/xxx.js|xxx.css</code>中，实际的<code>index.html</code>在<code>AAA</code>目录中，理论上应该在html文件同一目录中static寻找js和css文件，也就是相对路径去寻找。</p>
-<p>但是实际上不是，因为在<code>config/index.js</code>配置文件中，<code>build</code>的<code>assetsPublicPath</code>属性是<code>&#39;/&#39;</code>。先说说<code>/</code>和<code>./</code>的区别，前者是绝对路径，后者是相对路径。所以，修改成<code>./</code>就行。</p>
-<p>接着说我遇到的问题：</p>
-<p>在有个<code>div</code>标签中需要设置背景图片<code>background-image: url(../assets/cover.jpg);</code>，大小已经超过10KB。所以，上线后寻找图片的路径在<code>static/css/static/img/cover.eb8f9ba.jpg</code>，从路径上，明显出错了。实际打包后的路径在<code>static/img/cover.eb8f9ba.jpg</code>，既然把图片弄到css路径下，估计是css打包时出错了。</p>
-<p>那为何小图片没问题呢？那是因为把小图片转成base64编码，直接放到html中了。</p>
-<p>通过查找资料，解决这个问题：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      coverUrl: &#123; <span class="attr">backgroundImage</span>: <span class="string">`url(<span class="subst">$&#123;<span class="built_in">require</span>(<span class="string">'../assets/cover.jpg'</span>)&#125;</span>)`</span> &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后在<code>html</code>文件中设置：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pageLogin"</span> <span class="attr">:style</span>=<span class="string">"coverUrl"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>再打包后就没有问题，可以找到背景图片。</p>
-
-          
+          <p>先说说static和assets目录有什么区别：</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/18/vue中背景图片static-css-static-img路径错误/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1343,165 +1755,30 @@
                 
               
 
-              <time title="创建时间：2018-05-15 20:10:12 / 修改时间：20:34:22" itemprop="dateCreated datePublished" datetime="2018-05-15T20:10:12+08:00">2018-05-15</time>
+              <time title="创建时间：2018-05-15 20:10:12" itemprop="dateCreated datePublished" datetime="2018-05-15T20:10:12+08:00">2018-05-15</time>
             
 
-            
-              
-
-              
             
           </span>
 
           
-
-          
+            <span class="post-category" >
             
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在项目开发中，必然会遇到跨域问题。比如开发环境是losthost:8080/login，如果要从服务器获取数据啥的，就是<a href="http://www.xxx.com/api/xxx，这样必然获取不到，一般会返回404状态码。" target="_blank" rel="noopener">www.xxx.com/api/xxx，这样必然获取不到，一般会返回404状态码。</a></p>
-<p>开始的时候，我用Charles设置<code>Map Remote</code>，倒也非常方便，唯一有缺点的是平时开着Shadowsocks，会有冲突，导致代理失效。</p>
-<p>后来，查询了vue跨域调试问题，有用Charles的，有用node搭服务器的，有用nginx做反向代理的，有用vue-cli中的<code>http-proxy-middleware</code>。</p>
-<p>在项目中，我就是用vue-cli新建的项目，所以，自然要研究下代理了。</p>
-<p>在/config/index.js中有个proxyTable，默认是空的，没有设置任何代理。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'/login'</span>: &#123;</span><br><span class="line">  target: <span class="string">'http://xxx:12080'</span>, <span class="comment">// 目标域名</span></span><br><span class="line">  changeOrigin: <span class="literal">true</span>,</span><br><span class="line">  pathRewrite: &#123;</span><br><span class="line">    <span class="string">'^/login'</span>: <span class="string">'/yyy/login'</span> <span class="comment">// 规则, 见下面说明</span></span><br><span class="line">  &#125;,</span><br><span class="line">  headers: &#123;</span><br><span class="line">    <span class="comment">//'Cookie': 'SID=810q3nmoi5mfp8geb9bkm9jql0;' //这里可以设置cookies, 也可以不设置</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>这个是一部分的设置，请暂时忽略为何这么做。本地localhost:8080/login，会到服务器上<a href="http://xxx:12080/yyy/login拿数据或者提交数据。" target="_blank" rel="noopener">http://xxx:12080/yyy/login拿数据或者提交数据。</a></p>
-<p>第一行的/login是要匹配本地路由的，不然什么都代理会有些问题，本地的代码就没法调试，这个错误我犯过，所以，本地调试接口，最好弄个特殊的url，比如加入<code>/api</code>。这样只要是匹配上api就进行代理，其它的都正常调试。</p>
-<p>当然，部署到服务器端，可以设置nginx进行反向代理，配置一下conf文件就行，然后<code>nginx -s reload</code>。</p>
-<p>在<code>pathRewrite</code>中，决定是否要重写url，如果不重写，空着就行。本示例中要重写，就改写代理url。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/js中的双感叹号/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="haywang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端手册">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/15/js中的双感叹号/" itemprop="url">
-                  js中的双感叹号
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
+              <span class="post-meta-divider">|</span>
             
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">分类于</span>
               
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/框架/" itemprop="url" rel="index"><span itemprop="name">框架</span></a></span>
 
-              
+                
                 
               
-
-              <time title="创建时间：2018-05-15 19:51:33 / 修改时间：20:05:44" itemprop="dateCreated datePublished" datetime="2018-05-15T19:51:33+08:00">2018-05-15</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
+            </span>
           
 
           
@@ -1531,324 +1808,14 @@
 
       
         
-          
-            <p>忘记在哪儿看见<code>if(!!test)</code>，当时很好奇为何要用两个感叹号呢，难道不可以直接判断变量的真假吗？跟自己以前写C代码认知不一样。</p>
-<p>后来，查询了相关资料。这个双感叹号相当于对变量转换成boolean值。首先，最近的一个感叹号，对元素进行取反操作，相当于元素转成boolean值，并取反。最远的那个感叹号，相当于取反再取反，负负得正。这样就把元素变成真正的Boolean值。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">03.801</span> <span class="keyword">var</span> a=<span class="string">""</span></span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">03.803</span> <span class="literal">undefined</span></span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">14.482</span> !!a</span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">14.485</span> <span class="literal">false</span></span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">28.002</span> a=<span class="string">" "</span></span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">28.005</span> <span class="string">" "</span></span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">45.162</span> !!a</span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">45.165</span> <span class="literal">true</span></span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">56.489</span> a=<span class="number">-1</span></span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">56.494</span> <span class="number">-1</span></span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">59.888</span> !!a</span><br><span class="line"><span class="number">19</span>:<span class="number">58</span>:<span class="number">59.890</span> <span class="literal">true</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">04.486</span> a=<span class="number">0</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">04.488</span> <span class="number">0</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">07.865</span> !!a</span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">07.867</span> <span class="literal">false</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">42.495</span> a=<span class="literal">null</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">42.497</span> <span class="literal">null</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">44.626</span> !!a</span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">44.629</span> <span class="literal">false</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">50.668</span> a=<span class="literal">undefined</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">50.674</span> <span class="literal">undefined</span></span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">52.642</span> !!a</span><br><span class="line"><span class="number">19</span>:<span class="number">59</span>:<span class="number">52.649</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p>从控制台打印的结果来看，null、undefined、0都转换成false，符合正常认知。使用if判断时，可以正常工作，不会出现诡异的问题。其实，这都是JavaScript的弱类型惹的祸，不像C语言那样，编译器会自动进行强制类型转换。这种双感叹号相当于人工进行类型转换，把其它类型转成Boolean类型。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/vue中v-show和v-if的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="haywang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端手册">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/15/vue中v-show和v-if的区别/" itemprop="url">
-                  vue中v-show和v-if的区别
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-15 19:08:21 / 修改时间：19:41:11" itemprop="dateCreated datePublished" datetime="2018-05-15T19:08:21+08:00">2018-05-15</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>从名字上看，都是控制显示的，今天看一下官网文档，研究下两者到底有什么区别。</p>
-<p>从官网解释来看，<code>v-if</code>是真正的条件渲染，在切换过程中，事件监听和子组件会被销毁和重建，所以切换开销大，它适合很少切换的场合。</p>
-<p><code>v-if</code>有惰性的：如果初始渲染时条件为假，就什么也不做，一直到条件第一次变为真时，才会开始渲染条件快。</p>
-<p>在查看<code>v-if</code>文档时，提到<code>key</code>这一属性，这个属性是控制组件是否复用的。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"loginType === 'username'"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Username<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your username"</span> <span class="attr">key</span>=<span class="string">"username-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your email address"</span> <span class="attr">key</span>=<span class="string">"email-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>上面点击按钮进行切换时，如果没有key属性，用户的输入值会一直存在，不会清除用户输入，相当于子组件复用了。但是加入key属性后，切换时会清除输入值，其实这才是符合切换登录方式的习惯。当然，如果用户不输入任何值，只是替换<code>placeholder</code>里的内容。复用时，有个好处就是渲染效率高，不用重新删除/添加元素。</p>
-<p><code>v-show</code>说白了元素一直都在，只是控制元素的CSS属性<code>display: none</code>，所以第一次渲染的开销大。它更适合频繁切换的场合。<strong>注：<code>v-show</code>不支持<code>&lt;template&gt;</code>元素，也不支持<code>v-else</code></strong></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/vue中slot和slot-scope区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="haywang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端手册">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/10/vue中slot和slot-scope区别/" itemprop="url">
-                  vue中slot和slot-scope区别
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-10 19:38:30 / 修改时间：20:36:59" itemprop="dateCreated datePublished" datetime="2018-05-10T19:38:30+08:00">2018-05-10</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="插槽内容"><a href="#插槽内容" class="headerlink" title="插槽内容"></a>插槽内容</h2><p>先说slot，中文译名是插槽。</p>
-<p>比如在子组件<code>&lt;navigation-link&gt;</code>中代码如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span></span></span><br><span class="line"><span class="tag">   <span class="attr">v-bind:href</span>=<span class="string">"url"</span></span></span><br><span class="line"><span class="tag">   <span class="attr">class</span>=<span class="string">"nav-link"</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>然后在合成组件中是这样的：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">navigation-link</span> <span class="attr">url</span>=<span class="string">"/profile"</span>&gt;</span></span><br><span class="line">	Your Profile</span><br><span class="line"><span class="tag">&lt;/<span class="name">navigation-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>最终渲染出来就是：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/profile"</span> <span class="attr">class</span>=<span class="string">"nav-link"</span>&gt;</span></span><br><span class="line">	Your Profile</span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>我的理解是：slot就相当于一个占位符，说明这个地方要被父组件的内容替换，这样就相当于从父组件向子组件传递内容。</p>
-<h2 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h2><p>顾名思义：就是slot有个名字，这样父组件可以根据不同的名字传递不同的内容。</p>
-<p>比如一个<code>base-layout</code>组件：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"header"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">main</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"footer"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>如果父组件向不同的slot传递内容时，可以指定名字，这样就可以传递不同的内容。没有指定名字，就是默认对应。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">base-layout</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot</span>=<span class="string">"header"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Here might be a page title<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>A paragraph for the main content.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>And another one.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot</span>=<span class="string">"footer"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Here's some contact info<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">base-layout</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>其中<code>&lt;template&gt;</code>就是一个不可见的包裹元素，这个元素用的特别多。</p>
-<p>最终渲染出来的结果就是：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Here might be a page title<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">main</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>A paragraph for the main content.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>And another one.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Here's some contact info<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>从上面可以看出，从父组件向子组件传递内容非常方便，不用太复杂的方法就可以实现，更利于组件化。</p>
-<h2 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h2><p>在vue 2.1.0+中新增slot-scope，翻译过来就是作用域组件。当父组件从子组件获取数据时，非常有用。比如todo类应用，当点击父组件的某一项，如何改变子组件的内容呢？如果当初渲染的内容就在子组件上呢？这时就用到slot-scope。一个<code>todo-list</code>组件：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-for</span>=<span class="string">"todo in todos"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-bind:key</span>=<span class="string">"todo.id"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 我们为每个 todo 准备了一个插槽，--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 将 `todo` 对象作为一个插槽的 prop 传入。--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span> <span class="attr">v-bind:todo</span>=<span class="string">"todo"</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 回退的内容 --&gt;</span></span><br><span class="line">      &#123;&#123; todo.text &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这段很好理解，就是把todos里的内容都渲染出来。如果父组件没有传递内容，就使用默认的，如果传递了内容，就使用父组件的内容。在父组件中使用：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">todo-list</span> <span class="attr">v-bind:todos</span>=<span class="string">"todos"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 将 `slotProps` 定义为插槽作用域的名字 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"slotProps"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 为待办项自定义一个模板，--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 通过 `slotProps` 定制每个待办项。--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-if</span>=<span class="string">"slotProps.todo.isComplete"</span>&gt;</span>✓<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    &#123;&#123; slotProps.todo.text &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">todo-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>相当于子组件将内容通过<code>slotProps</code>传递给父组件，然后父组件知道是哪一项的todo被点击了，就在前面加个对号，表示这项已完成。</p>
-<p>其实，我在工作遇到表格的某一行需要编辑的情况，当整个表格渲染后，父组件其实是没法知道是哪一行要修改数据，除非遍历每一行唯一的id，进行查找对比。表格行数少还行，如果太多了就需要较长时间，效率比较低。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"scope"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">size</span>=<span class="string">"mini"</span> <span class="attr">type</span>=<span class="string">"primary"</span> @<span class="attr">click</span>=<span class="string">"edit(scope.row)"</span>&gt;</span>编辑<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这是最后一列的数据，只要点击编辑按钮，就可以获取整行的数据，非常方便。</p>
-<p>综合来看，slot就是父子传递内容的方式，跟props类似。</p>
-
-          
+          <p>在项目开发中，必然会遇到跨域问题。比如开发环境是losthost:8080/login，如果要从服务器获取数据啥的，就是<a href="http://www.xxx.com/api/xxx，这样必然获取不到，一般会返回404状态码。" target="_blank" rel="noopener">www.xxx.com/api/xxx，这样必然获取不到，一般会返回404状态码。</a></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/15/vue中使用proxyTable代理/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1932,14 +1899,68 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
             </nav>
           
@@ -1976,7 +1997,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

@@ -102,17 +102,18 @@
 
 
 
-  <meta name="description" content="先说说static和assets目录有什么区别： 我的项目使用vue-cli创建的，在打包的时候，static目录的文件，会被简单拷贝到dist目录。但是assets里的文件会被webpack处理下。比如js或者css文件会被打上7位的hash戳。并且如果图片、视频、字体不超过10KB大小，会转成base64编码，直接加入html文件中，这样可以提高加载速度。 如果文件超过10KB大小，会加上ha">
+  <meta name="description" content="先说说static和assets目录有什么区别：">
+<meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue中背景图片static&#x2F;css&#x2F;static&#x2F;img路径错误">
 <meta property="og:url" content="http://yoursite.com/2018/05/18/vue中背景图片static-css-static-img路径错误/index.html">
 <meta property="og:site_name" content="前端手册">
-<meta property="og:description" content="先说说static和assets目录有什么区别： 我的项目使用vue-cli创建的，在打包的时候，static目录的文件，会被简单拷贝到dist目录。但是assets里的文件会被webpack处理下。比如js或者css文件会被打上7位的hash戳。并且如果图片、视频、字体不超过10KB大小，会转成base64编码，直接加入html文件中，这样可以提高加载速度。 如果文件超过10KB大小，会加上ha">
+<meta property="og:description" content="先说说static和assets目录有什么区别：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-18T09:36:48.267Z">
+<meta property="og:updated_time" content="2019-03-22T03:53:13.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue中背景图片static&#x2F;css&#x2F;static&#x2F;img路径错误">
-<meta name="twitter:description" content="先说说static和assets目录有什么区别： 我的项目使用vue-cli创建的，在打包的时候，static目录的文件，会被简单拷贝到dist目录。但是assets里的文件会被webpack处理下。比如js或者css文件会被打上7位的hash戳。并且如果图片、视频、字体不超过10KB大小，会转成base64编码，直接加入html文件中，这样可以提高加载速度。 如果文件超过10KB大小，会加上ha">
+<meta name="twitter:description" content="先说说static和assets目录有什么区别：">
 
 
 
@@ -224,22 +225,6 @@
         
         
           
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
-  </li>
-        
-        
-        
-          
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
@@ -256,9 +241,17 @@
         
         
           
-          <li class="menu-item menu-item-schedule">
-    <a href="/schedule/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
   </li>
 
       
@@ -351,16 +344,30 @@
                 
               
 
-              <time title="创建时间：2018-05-18 16:52:54 / 修改时间：17:36:48" itemprop="dateCreated datePublished" datetime="2018-05-18T16:52:54+08:00">2018-05-18</time>
+              <time title="创建时间：2018-05-18 16:52:54" itemprop="dateCreated datePublished" datetime="2018-05-18T16:52:54+08:00">2018-05-18</time>
             
 
-            
-              
-
-              
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/框架/" itemprop="url" rel="index"><span itemprop="name">框架</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -390,6 +397,7 @@
 
       
         <p>先说说static和assets目录有什么区别：</p>
+<a id="more"></a>
 <p>我的项目使用<code>vue-cli</code>创建的，在打包的时候，static目录的文件，会被简单拷贝到<code>dist</code>目录。但是assets里的文件会被webpack处理下。比如js或者css文件会被打上7位的hash戳。并且如果图片、视频、字体不超过10KB大小，会转成base64编码，直接加入html文件中，这样可以提高加载速度。</p>
 <p>如果文件超过10KB大小，会加上hash戳，分别拷贝到<code>dist/static/fonts|img|media</code>目录中。</p>
 <p>先说说<code>vue-cli</code>中build完后，上传到服务器上，会出现找不到js和css文件的404错误。通过浏览器查看错误，发现资源文件的路径在<code>xxx.com/static/xxx.js|xxx.css</code>中，实际的<code>index.html</code>在<code>AAA</code>目录中，理论上应该在html文件同一目录中static寻找js和css文件，也就是相对路径去寻找。</p>
@@ -419,6 +427,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
+          
+        </div>
       
 
       
@@ -506,14 +520,68 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
             </nav>
           
@@ -550,7 +618,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

@@ -102,17 +102,18 @@
 
 
 
-  <meta name="description" content="在*.vue文件中，一般会有一个template，在这里可编写模板。即使是一个组件，里面还是有很多个标签，比如标题、正文等，这里只是举个例子。 12345678&amp;lt;template&amp;gt;    &amp;lt;h2&amp;gt;        文章标题    &amp;lt;/h2&amp;gt;    &amp;lt;p&amp;gt;        文章正文    &amp;lt;/p&amp;gt;&amp;lt;/template&amp;gt; 如果像上面这">
+  <meta name="description" content="在*.vue文件中，一般会有一个template，在这里可编写模板。即使是一个组件，里面还是有很多个标签，比如标题、正文等，这里只是举个例子。">
+<meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue中单个根元素">
 <meta property="og:url" content="http://yoursite.com/2018/05/10/vue中单个根元素/index.html">
 <meta property="og:site_name" content="前端手册">
-<meta property="og:description" content="在*.vue文件中，一般会有一个template，在这里可编写模板。即使是一个组件，里面还是有很多个标签，比如标题、正文等，这里只是举个例子。 12345678&amp;lt;template&amp;gt;    &amp;lt;h2&amp;gt;        文章标题    &amp;lt;/h2&amp;gt;    &amp;lt;p&amp;gt;        文章正文    &amp;lt;/p&amp;gt;&amp;lt;/template&amp;gt; 如果像上面这">
+<meta property="og:description" content="在*.vue文件中，一般会有一个template，在这里可编写模板。即使是一个组件，里面还是有很多个标签，比如标题、正文等，这里只是举个例子。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-10T12:41:27.937Z">
+<meta property="og:updated_time" content="2019-03-22T03:52:27.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue中单个根元素">
-<meta name="twitter:description" content="在*.vue文件中，一般会有一个template，在这里可编写模板。即使是一个组件，里面还是有很多个标签，比如标题、正文等，这里只是举个例子。 12345678&amp;lt;template&amp;gt;    &amp;lt;h2&amp;gt;        文章标题    &amp;lt;/h2&amp;gt;    &amp;lt;p&amp;gt;        文章正文    &amp;lt;/p&amp;gt;&amp;lt;/template&amp;gt; 如果像上面这">
+<meta name="twitter:description" content="在*.vue文件中，一般会有一个template，在这里可编写模板。即使是一个组件，里面还是有很多个标签，比如标题、正文等，这里只是举个例子。">
 
 
 
@@ -224,22 +225,6 @@
         
         
           
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
-  </li>
-        
-        
-        
-          
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
@@ -256,9 +241,17 @@
         
         
           
-          <li class="menu-item menu-item-schedule">
-    <a href="/schedule/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
   </li>
 
       
@@ -351,16 +344,30 @@
                 
               
 
-              <time title="创建时间：2018-05-10 19:23:02 / 修改时间：20:41:27" itemprop="dateCreated datePublished" datetime="2018-05-10T19:23:02+08:00">2018-05-10</time>
+              <time title="创建时间：2018-05-10 19:23:02" itemprop="dateCreated datePublished" datetime="2018-05-10T19:23:02+08:00">2018-05-10</time>
             
 
-            
-              
-
-              
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/框架/" itemprop="url" rel="index"><span itemprop="name">框架</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -390,6 +397,7 @@
 
       
         <p>在<code>*.vue</code>文件中，一般会有一个template，在这里可编写模板。即使是一个组件，里面还是有很多个标签，比如标题、正文等，这里只是举个例子。</p>
+<a id="more"></a>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line">        文章标题</span><br><span class="line">    <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        文章正文</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>如果像上面这样写，肯定会出错，会提示<code>every component must have a single root element</code>，意思说每个组件只有一个根元素。刚开始写组件的时候，总是犯这个错误。一般在所有标签外面套一层父标签就行。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line">            文章标题</span><br><span class="line">        <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">            文章正文</span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>    </span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -410,6 +418,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
+          
+        </div>
       
 
       
@@ -497,14 +511,68 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
             </nav>
           
@@ -541,7 +609,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

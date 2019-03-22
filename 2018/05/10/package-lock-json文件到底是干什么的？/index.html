@@ -102,17 +102,18 @@
 
 
 
-  <meta name="description" content="参考文档：官网说明 修改了node_modules和package.json，都会自动产生package-lock.json文件。package.json记录依赖的包名和版本号，而lock文件记录实际安装的包以及相关依赖包，相当于具体的组织树。 好处呢：就是保证不同电脑，不同的人，安装npm包，都会根据lock文件来安装，这样不会因为某个依赖包的版本不对，导致程序运行不起来或者有bug。所以呢，g">
+  <meta name="description" content="参考文档：官网说明 修改了node_modules和package.json，都会自动产生package-lock.json文件。package.json记录依赖的包名和版本号，而lock文件记录实际安装的包以及相关依赖包，相当于具体的组织树。">
+<meta name="keywords" content="Webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="package-lock.json文件到底是干什么的？">
 <meta property="og:url" content="http://yoursite.com/2018/05/10/package-lock-json文件到底是干什么的？/index.html">
 <meta property="og:site_name" content="前端手册">
-<meta property="og:description" content="参考文档：官网说明 修改了node_modules和package.json，都会自动产生package-lock.json文件。package.json记录依赖的包名和版本号，而lock文件记录实际安装的包以及相关依赖包，相当于具体的组织树。 好处呢：就是保证不同电脑，不同的人，安装npm包，都会根据lock文件来安装，这样不会因为某个依赖包的版本不对，导致程序运行不起来或者有bug。所以呢，g">
+<meta property="og:description" content="参考文档：官网说明 修改了node_modules和package.json，都会自动产生package-lock.json文件。package.json记录依赖的包名和版本号，而lock文件记录实际安装的包以及相关依赖包，相当于具体的组织树。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-10T03:53:18.981Z">
+<meta property="og:updated_time" content="2019-03-22T03:54:28.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="package-lock.json文件到底是干什么的？">
-<meta name="twitter:description" content="参考文档：官网说明 修改了node_modules和package.json，都会自动产生package-lock.json文件。package.json记录依赖的包名和版本号，而lock文件记录实际安装的包以及相关依赖包，相当于具体的组织树。 好处呢：就是保证不同电脑，不同的人，安装npm包，都会根据lock文件来安装，这样不会因为某个依赖包的版本不对，导致程序运行不起来或者有bug。所以呢，g">
+<meta name="twitter:description" content="参考文档：官网说明 修改了node_modules和package.json，都会自动产生package-lock.json文件。package.json记录依赖的包名和版本号，而lock文件记录实际安装的包以及相关依赖包，相当于具体的组织树。">
 
 
 
@@ -224,22 +225,6 @@
         
         
           
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
-  </li>
-        
-        
-        
-          
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
@@ -256,9 +241,17 @@
         
         
           
-          <li class="menu-item menu-item-schedule">
-    <a href="/schedule/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
   </li>
 
       
@@ -351,16 +344,30 @@
                 
               
 
-              <time title="创建时间：2018-05-10 11:35:20 / 修改时间：11:53:18" itemprop="dateCreated datePublished" datetime="2018-05-10T11:35:20+08:00">2018-05-10</time>
+              <time title="创建时间：2018-05-10 11:35:20" itemprop="dateCreated datePublished" datetime="2018-05-10T11:35:20+08:00">2018-05-10</time>
             
 
-            
-              
-
-              
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/工具/" itemprop="url" rel="index"><span itemprop="name">工具</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -391,6 +398,7 @@
       
         <p>参考文档：<a href="https://docs.npmjs.com/files/package-lock.json" target="_blank" rel="noopener">官网说明</a></p>
 <p>修改了<code>node_modules</code>和<code>package.json</code>，都会自动产生<code>package-lock.json</code>文件。<code>package.json</code>记录依赖的包名和版本号，而lock文件记录实际安装的包以及相关依赖包，相当于具体的组织树。</p>
+<a id="more"></a>
 <p>好处呢：就是保证不同电脑，不同的人，安装npm包，都会根据lock文件来安装，这样不会因为某个依赖包的版本不对，导致程序运行不起来或者有bug。所以呢，git提交时，不用提交<code>node_modules</code>文件夹，一般会提交lock文件，也可以根据diff，查看lock文件的变化。</p>
 <p><code>package-lock.json</code>不能被发布，但是<code>npm-shrinkwarp.json</code>可以，但不推荐这样做。如果同时存在两个文件，lock文件会被忽略。</p>
 <p>文件中的每个关键词定义，可以看官网解释。</p>
@@ -411,6 +419,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Webpack/" rel="tag"># Webpack</a>
+          
+        </div>
       
 
       
@@ -498,14 +512,68 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
             </nav>
           
@@ -542,7 +610,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

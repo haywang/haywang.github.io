@@ -102,17 +102,18 @@
 
 
 
-  <meta name="description" content="1、清理HTML 嵌入或内联样式移到样式表中 移除不必要的标记或者元素，比如巨多的div，尽量用HTML5的标签 没用的注释代码  语义化标签和id、class尽量有意义，比如login代表登录，left是无意义的。好处是：易读、易测试和易编辑，总之就是易维护，还有文件更小。 无障碍经过语义化和精简后，搜索引擎蜘蛛和浏览器更容易理解网页内容，抓取和渲染速度更快 框架和网格框架是大而全的，实际中很多">
+  <meta name="description" content="1、清理HTML 嵌入或内联样式移到样式表中 移除不必要的标记或者元素，比如巨多的div，尽量用HTML5的标签 没用的注释代码">
+<meta name="keywords" content="性能优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网站性能之HTML和CSS">
 <meta property="og:url" content="http://yoursite.com/2018/08/29/网站性能之HTML和CSS/index.html">
 <meta property="og:site_name" content="前端手册">
-<meta property="og:description" content="1、清理HTML 嵌入或内联样式移到样式表中 移除不必要的标记或者元素，比如巨多的div，尽量用HTML5的标签 没用的注释代码  语义化标签和id、class尽量有意义，比如login代表登录，left是无意义的。好处是：易读、易测试和易编辑，总之就是易维护，还有文件更小。 无障碍经过语义化和精简后，搜索引擎蜘蛛和浏览器更容易理解网页内容，抓取和渲染速度更快 框架和网格框架是大而全的，实际中很多">
+<meta property="og:description" content="1、清理HTML 嵌入或内联样式移到样式表中 移除不必要的标记或者元素，比如巨多的div，尽量用HTML5的标签 没用的注释代码">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-29T12:05:58.141Z">
+<meta property="og:updated_time" content="2019-03-22T03:05:18.407Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网站性能之HTML和CSS">
-<meta name="twitter:description" content="1、清理HTML 嵌入或内联样式移到样式表中 移除不必要的标记或者元素，比如巨多的div，尽量用HTML5的标签 没用的注释代码  语义化标签和id、class尽量有意义，比如login代表登录，left是无意义的。好处是：易读、易测试和易编辑，总之就是易维护，还有文件更小。 无障碍经过语义化和精简后，搜索引擎蜘蛛和浏览器更容易理解网页内容，抓取和渲染速度更快 框架和网格框架是大而全的，实际中很多">
+<meta name="twitter:description" content="1、清理HTML 嵌入或内联样式移到样式表中 移除不必要的标记或者元素，比如巨多的div，尽量用HTML5的标签 没用的注释代码">
 
 
 
@@ -224,22 +225,6 @@
         
         
           
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
-  </li>
-        
-        
-        
-          
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
@@ -256,9 +241,17 @@
         
         
           
-          <li class="menu-item menu-item-schedule">
-    <a href="/schedule/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
   </li>
 
       
@@ -351,16 +344,30 @@
                 
               
 
-              <time title="创建时间：2018-08-29 15:20:52 / 修改时间：20:05:58" itemprop="dateCreated datePublished" datetime="2018-08-29T15:20:52+08:00">2018-08-29</time>
+              <time title="创建时间：2018-08-29 15:20:52" itemprop="dateCreated datePublished" datetime="2018-08-29T15:20:52+08:00">2018-08-29</time>
             
 
-            
-              
-
-              
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -394,6 +401,7 @@
 <li>移除不必要的标记或者元素，比如巨多的div，尽量用HTML5的标签</li>
 <li>没用的注释代码</li>
 </ul>
+<a id="more"></a>
 <h3 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h3><p>标签和id、class尽量有意义，比如login代表登录，left是无意义的。好处是：易读、易测试和易编辑，总之就是易维护，还有文件更小。</p>
 <h3 id="无障碍"><a href="#无障碍" class="headerlink" title="无障碍"></a>无障碍</h3><p>经过语义化和精简后，搜索引擎蜘蛛和浏览器更容易理解网页内容，抓取和渲染速度更快</p>
 <h3 id="框架和网格"><a href="#框架和网格" class="headerlink" title="框架和网格"></a>框架和网格</h3><p>框架是大而全的，实际中很多是用不到的，这个需要自己定制</p>
@@ -408,7 +416,7 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href="http://fonts.googleapis.com/css?family=Philosopher </span><br><span class="line">  &amp;subset=cyrillic" rel="stylesheet" /&gt;</span><br><span class="line"></span><br><span class="line">&lt;link href="http://fonts.googleapis.com/css?family=Philosopher </span><br><span class="line">  &amp;text=Howdy" rel="stylesheet" /&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="4、重用颜色"><a href="#4、重用颜色" class="headerlink" title="4、重用颜色"></a>4、重用颜色</h2><p>相当于做个一致性的配色库。</p>
 <h2 id="5、加载顺序"><a href="#5、加载顺序" class="headerlink" title="5、加载顺序"></a>5、加载顺序</h2><p>head中加载样式，body底部加载js，或者异步加载（注意加载的顺序和依赖关系，否则会有问题）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"main.js"</span> <span class="keyword">async</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"main.js"</span> <span class="keyword">async</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <h2 id="6、压缩和gzip"><a href="#6、压缩和gzip" class="headerlink" title="6、压缩和gzip"></a>6、压缩和gzip</h2><p>压缩后，就是一行，所以要保留源文件，不然就没法调试和阅读。另外在反向代理里设置gzip</p>
 <h2 id="7、缓存静态文件"><a href="#7、缓存静态文件" class="headerlink" title="7、缓存静态文件"></a>7、缓存静态文件</h2><p>根据调试经验，浏览器缓存后，刷新页面直接从本地浏览器缓存中获取文件，不会再发起重新请求。设置<code>Expires and Cache-Control: max-age</code>和<code>Last-Modified and ETag</code>，这部分内容还要学习，暂时记录下。</p>
 
@@ -429,6 +437,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/性能优化/" rel="tag"># 性能优化</a>
+          
+        </div>
+      
 
       
       
@@ -447,6 +461,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/22/测试页面/" rel="prev" title="测试页面">
+                测试页面 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -520,14 +538,68 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
             </nav>
           
@@ -580,7 +652,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
