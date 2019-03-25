@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="前端手册">
 <meta property="og:description" content="之前自己动手搭建了一个小孩子学习Python编程的网站，由于用到比较多的图片和mp3音乐，再加上开源项目用到国外的一些第三方js（比如fb登录等），加载起来挺慢的。于是使用免费的创宇云加速，但是缓存命中率有点低，趁着这个机会学习缓存相关的知识。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-25T15:23:12.616Z">
+<meta property="og:updated_time" content="2019-03-25T16:02:08.705Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="缓存">
 <meta name="twitter:description" content="之前自己动手搭建了一个小孩子学习Python编程的网站，由于用到比较多的图片和mp3音乐，再加上开源项目用到国外的一些第三方js（比如fb登录等），加载起来挺慢的。于是使用免费的创宇云加速，但是缓存命中率有点低，趁着这个机会学习缓存相关的知识。">
@@ -410,6 +410,15 @@
 </ul>
 <p>格式：<code>Cache-Control: max-age=31536000</code>，max-age后面跟的是相对时间，单位是秒，就是第一次获得文件，在max-age秒之后过期。</p>
 <p>另外两种：<code>Cache-Control: no-store</code>和<code>Cache-Control: no-cache</code>，前者就是客户端和浏览器都不缓存，后者表示，我要先跟服务器进行验证前，即使我有缓存也不给你用，所以多了一步和服务器进行验证的过程。</p>
+<ul>
+<li>If-Modified-Since</li>
+</ul>
+<p>格式：<code>Last-Modified: &lt;day-name&gt;, &lt;day&gt; &lt;month&gt; &lt;year&gt; &lt;hour&gt;:&lt;minute&gt;:&lt;second&gt; GMT</code>，客户端向服务器端条件查询：文档是不是在xxx时间修改，相当于比较修改时间，而不是理解成在xxx时间之后修改。要是服务器端没有修改，就返回304，直接拿本地的缓存。如果服务器修改了，就返回新文档。它有一个缺点：1，文件被重写，内容一样，修改时间肯定变化了，这样还是认为文件发生变化 2、文档更新很快（亚秒级），那么以秒为最小单位无法区分是否变化，基于以上缺点，出现了<code>ETag</code>匹配。</p>
+<ul>
+<li>If-None-Match</li>
+</ul>
+<p>格式：<code>If-None-Match: &quot;&lt;etag_value&gt;&quot;</code>，如果文档没变化，就返回304 (Not Modified)。如果文档更改，就返回新的文档和ETag。一般使用GET和HEAD方法。</p>
+<p>以上暂时是我的记录，后面随着理解的深入，再补充。</p>
 
       
     </div>
