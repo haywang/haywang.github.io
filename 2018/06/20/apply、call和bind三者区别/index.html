@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="在学习JS的继承时，经常看到call函数，在红宝书中也没看到特别详细的解释，就上MDN上查询了下，发现解释的挺详细。apply和call两者功能类似，bind有点区别。">
+<meta name="keywords" content="知识点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="apply、call和bind三者区别">
+<meta property="og:url" content="http://yoursite.com/2018/06/20/apply、call和bind三者区别/index.html">
+<meta property="og:site_name" content="前端手册">
+<meta property="og:description" content="在学习JS的继承时，经常看到call函数，在红宝书中也没看到特别详细的解释，就上MDN上查询了下，发现解释的挺详细。apply和call两者功能类似，bind有点区别。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-25T14:01:19.241Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="apply、call和bind三者区别">
+<meta name="twitter:description" content="在学习JS的继承时，经常看到call函数，在红宝书中也没看到特别详细的解释，就上MDN上查询了下，发现解释的挺详细。apply和call两者功能类似，bind有点区别。">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/20/apply、call和bind三者区别/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>apply、call和bind三者区别 | 前端手册</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">前端手册</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不仅仅是手册</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/20/apply、call和bind三者区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="haywang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端手册">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">apply、call和bind三者区别
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-20 23:16:21" itemprop="dateCreated datePublished" datetime="2018-06-20T23:16:21+08:00">2018-06-20</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/语言/" itemprop="url" rel="index"><span itemprop="name">语言</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在学习JS的继承时，经常看到call函数，在红宝书中也没看到特别详细的解释，就上MDN上查询了下，发现解释的挺详细。apply和call两者功能类似，bind有点区别。</p>
+<a id="more"></a>
+<p>看基本使用方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>.<span class="title">apply</span>(<span class="params">thisArg, [argsArray]</span>)</span></span><br><span class="line"><span class="function"><span class="title">function</span>.<span class="title">call</span>(<span class="params">thisArg, arg1, arg2, ...</span>)</span></span><br><span class="line"><span class="function"><span class="title">function</span>.<span class="title">bind</span>(<span class="params">thisArg[, arg1[, arg2[, ...]]]</span>)</span></span><br></pre></td></tr></table></figure>
+<p>从参数上看，apply是多个参数组成的数组，我是这么记的：apply和array，首字母都是a，哈哈！而call是一个一个的参数，从逗号分隔。最后bind的参数是可选的，绑定的新函数调用时，可以依次传入，后面再详细解释。</p>
+<p>从功能上看，apply和call都是传入this和参数，然后调用函数。而bind是创建一个新函数，新函数调用时，依次传入参数。</p>
+<h3 id="call示例"><a href="#call示例" class="headerlink" title="call示例"></a>call示例</h3><ul>
+<li>构造函数继承</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Product</span>(<span class="params">name, price</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.price = price;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Food</span>(<span class="params">name, price</span>) </span>&#123;</span><br><span class="line">  Product.call(<span class="keyword">this</span>, name, price);</span><br><span class="line">  <span class="keyword">this</span>.category = <span class="string">'food'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> cheese = <span class="keyword">new</span> Food(<span class="string">'feta'</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<p>经典的构造函数继承方式，红宝书P167页有说明。</p>
+<ul>
+<li>调用匿名函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> animals = [</span><br><span class="line">  &#123; <span class="attr">species</span>: <span class="string">'Lion'</span>, <span class="attr">name</span>: <span class="string">'King'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">species</span>: <span class="string">'Whale'</span>, <span class="attr">name</span>: <span class="string">'Fail'</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; animals.length; i++) &#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.print = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'#'</span> + i + <span class="string">' '</span> + <span class="keyword">this</span>.species</span><br><span class="line">                  + <span class="string">': '</span> + <span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.print();</span><br><span class="line">  &#125;).call(animals[i], i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于匿名函数没有名字，不能用函数名调用，可以使用call来调用。上面示例中，匿名函数中申明了一个print函数，并调用print()。使用call调用每个匿名函数，并将<code>animals[i]</code>的作用域传给匿名函数，<code>i</code>作为参数传递。</p>
+<ul>
+<li>使用call调用函数，并指定新的this上下文</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greet</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> reply = [<span class="keyword">this</span>.animal, <span class="string">'typically sleep between'</span>, <span class="keyword">this</span>.sleepDuration].join(<span class="string">' '</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(reply);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  animal: <span class="string">'cats'</span>, <span class="attr">sleepDuration</span>: <span class="string">'12 and 16 hours'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">greet.call(obj);  <span class="comment">// cats typically sleep between 12 and 16 hours</span></span><br></pre></td></tr></table></figure>
+<p>实例中将obj对象传给函数的this上下文，所以可以正常调用<code>this.animal</code>和<code>this.sleepDuration</code>，跟构造函数继承的用法类似。</p>
+<ul>
+<li>调用函数时不指定第一个参数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sData = <span class="string">'Wisen'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">display</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'sData value is %s '</span>, <span class="keyword">this</span>.sData);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">display.call();  <span class="comment">// sData value is Wisen</span></span><br><span class="line"><span class="comment">//'use strict'; </span></span><br><span class="line">display.call(); <span class="comment">// Cannot read the property of 'sData' of undefined</span></span><br></pre></td></tr></table></figure>
+<p>在非严格模式，this会绑定到全局作用域，所以<code>this.sData</code>是<code>Wisen</code>。但是在严格模式，this是undefined，特别注意下。</p>
+<h3 id="apply示例"><a href="#apply示例" class="headerlink" title="apply示例"></a>apply示例</h3><ul>
+<li>将数组添加到另外一个数组后面</li>
+</ul>
+<p>自带的<code>concat</code>可以实现两个数组组合成一个数组，但是它会返回一个新数组，并不是添加到原数组里。<code>push</code>函数只能一次添加一个元素，最笨的办法使用一个for循环一个个push。优雅的方式就是今天的示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="string">'a'</span>, <span class="string">'b'</span>];</span><br><span class="line"><span class="keyword">var</span> elements = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">array.push.apply(array, elements);</span><br><span class="line"><span class="built_in">console</span>.info(array); <span class="comment">// ["a", "b", 0, 1, 2]</span></span><br></pre></td></tr></table></figure>
+<p>用法也挺简单：要添加的数组调用push函数，传入的this是自己，参数是另外一个数组，这样相当于依次push每个元素，很巧妙。</p>
+<ul>
+<li>使用内建函数</li>
+</ul>
+<p><code>Math.max</code>和<code>Math.min</code>传入的参数是一个个的元素，如果找出数组中最大和最小的值，怎么办呢？当然apply了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// min/max number in an array</span></span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">7</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// using Math.min/Math.max apply</span></span><br><span class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, numbers); </span><br><span class="line"><span class="comment">// This about equal to Math.max(numbers[0], ...)</span></span><br><span class="line"><span class="comment">// or Math.max(5, 6, ...)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> min = <span class="built_in">Math</span>.min.apply(<span class="literal">null</span>, numbers);</span><br></pre></td></tr></table></figure>
+<p>这有个问题，apply传入的参数数组有长度限制，如果数组很大，就会报错。解决思路是：将数组<code>slice</code>成子数组，在子数组上应用<code>Math.max/min.apply</code>，然后将比较结果和前一次的结果进行比较，最终得出最大或最小值。</p>
+<ul>
+<li>可以传入数组的构造函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.construct = <span class="function"><span class="keyword">function</span>(<span class="params">aArgs</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> oNew = <span class="built_in">Object</span>.create(<span class="keyword">this</span>.prototype);</span><br><span class="line">  <span class="keyword">this</span>.apply(oNew, aArgs);</span><br><span class="line">  <span class="keyword">return</span> oNew;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyConstructor</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> nProp = <span class="number">0</span>; nProp &lt; <span class="built_in">arguments</span>.length; nProp++) &#123;</span><br><span class="line">    <span class="keyword">this</span>[<span class="string">'property'</span> + nProp] = <span class="built_in">arguments</span>[nProp];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myArray = [<span class="number">4</span>, <span class="string">'Hello world!'</span>, <span class="literal">false</span>];</span><br><span class="line"><span class="keyword">var</span> myInstance = MyConstructor.construct(myArray);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(myInstance.property1);                <span class="comment">// logs 'Hello world!'</span></span><br><span class="line"><span class="built_in">console</span>.log(myInstance <span class="keyword">instanceof</span> MyConstructor); <span class="comment">// logs 'true'</span></span><br><span class="line"><span class="built_in">console</span>.log(myInstance.constructor);              <span class="comment">// logs 'MyConstructor'</span></span><br></pre></td></tr></table></figure>
+<p>在<code>construct</code>中，先创建当前函数原型的副本，然后再调用当前函数，并且把原型副本的作用域传给this，参数aArgs也传入，最后返回原型副本，相当于模拟<code>new</code>操作，所以第二个打印是<code>true</code>。</p>
+<h3 id="bind示例"><a href="#bind示例" class="headerlink" title="bind示例"></a>bind示例</h3><ul>
+<li>创建绑定函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.x = <span class="number">9</span>;    <span class="comment">// this refers to global "window" object here in the browser</span></span><br><span class="line"><span class="keyword">var</span> <span class="built_in">module</span> = &#123;</span><br><span class="line">  x: <span class="number">81</span>,</span><br><span class="line">  getX: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.x; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.getX(); <span class="comment">// 81</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> retrieveX = <span class="built_in">module</span>.getX;</span><br><span class="line">retrieveX();   </span><br><span class="line"><span class="comment">// returns 9 - The function gets invoked at the global scope</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Create a new function with 'this' bound to module</span></span><br><span class="line"><span class="comment">// New programmers might confuse the</span></span><br><span class="line"><span class="comment">// global var x with module's property x</span></span><br><span class="line"><span class="keyword">var</span> boundGetX = retrieveX.bind(<span class="built_in">module</span>);</span><br><span class="line">boundGetX(); <span class="comment">// 81</span></span><br></pre></td></tr></table></figure>
+<p><code>retrieveX</code>已经是全局函数，作用域是全局作用域，此时的<code>this</code>是window（如果JS在浏览器中运行），所以，调用bind，可以重新绑定到<code>module</code>作用域。</p>
+<ul>
+<li>在setTimeout中使用</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LateBloomer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.petalCount = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">12</span>) + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Declare bloom after a delay of 1 second</span></span><br><span class="line">LateBloomer.prototype.bloom = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="keyword">this</span>.declare.bind(<span class="keyword">this</span>), <span class="number">1000</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">LateBloomer.prototype.declare = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'I am a beautiful flower with '</span> +</span><br><span class="line">    <span class="keyword">this</span>.petalCount + <span class="string">' petals!'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> flower = <span class="keyword">new</span> LateBloomer();</span><br><span class="line">flower.bloom();  </span><br><span class="line"><span class="comment">// after 1 second, triggers the 'declare' method</span></span><br></pre></td></tr></table></figure>
+<p>如果没有<code>this.declare.bind(this)</code>，直接打印<code>I am a beautiful flower with 1 petals!</code>没有延迟，说明回调函数没有正常执行。（<strong><em>这部分有点费解，暂时先记录下来</em></strong>）</p>
+<ul>
+<li>函数简写</li>
+</ul>
+<p>如果简写的函数在调用需要this参数时，可以用以下两种方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法一</span></span><br><span class="line"><span class="keyword">var</span> slice = <span class="built_in">Array</span>.prototype.slice;</span><br><span class="line">slice.apply(<span class="built_in">arguments</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//方法二</span></span><br><span class="line"><span class="comment">// same as "slice" in the previous example</span></span><br><span class="line"><span class="keyword">var</span> unboundSlice = <span class="built_in">Array</span>.prototype.slice;</span><br><span class="line"><span class="keyword">var</span> slice = <span class="built_in">Function</span>.prototype.apply.bind(unboundSlice);</span><br><span class="line">slice(<span class="built_in">arguments</span>);</span><br></pre></td></tr></table></figure>
+<p>第一种方法好理解，第二张更简洁，理解起来稍微费劲些，相当于统一执行了<code>slice.apply</code>不用每次都执行。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/知识点/" rel="tag"># 知识点</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/16/提高github的访问速度/" rel="next" title="提高github的访问速度">
+                <i class="fa fa-chevron-left"></i> 提高github的访问速度
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/05/缓存/" rel="prev" title="缓存">
+                缓存 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">haywang</p>
+              <p class="site-description motion-element" itemprop="description">人若无名，便可专心练剑</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#call示例"><span class="nav-number">1.</span> <span class="nav-text">call示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apply示例"><span class="nav-number">2.</span> <span class="nav-text">apply示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bind示例"><span class="nav-number">3.</span> <span class="nav-text">bind示例</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">haywang</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
