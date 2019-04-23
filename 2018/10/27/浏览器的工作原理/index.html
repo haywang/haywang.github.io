@@ -110,16 +110,16 @@
 <meta property="og:site_name" content="前端手册">
 <meta property="og:description" content="无意中看到一篇介绍浏览器工作原理的网站，简单看了下，讲得挺好，就记录笔记。网址：点击进入">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2018/10/27/images/browser-layers.png">
-<meta property="og:image" content="http://yoursite.com/2018/10/27/images/webkitflow.png">
-<meta property="og:image" content="http://yoursite.com/2018/10/27/images/dom-tree.png">
-<meta property="og:image" content="http://yoursite.com/2018/10/27/images/CSSOM.png">
-<meta property="og:image" content="http://yoursite.com/2018/10/27/images/render-tree.png">
-<meta property="og:updated_time" content="2019-04-09T11:07:54.638Z">
+<meta property="og:image" content="http://yoursite.com/images/browser-layers.png">
+<meta property="og:image" content="http://yoursite.com/images/webkitflow.png">
+<meta property="og:image" content="http://yoursite.com/images/dom-tree.png">
+<meta property="og:image" content="http://yoursite.com/images/CSSOM.png">
+<meta property="og:image" content="http://yoursite.com/images/render-tree.png">
+<meta property="og:updated_time" content="2019-04-23T12:45:05.943Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器的工作原理">
 <meta name="twitter:description" content="无意中看到一篇介绍浏览器工作原理的网站，简单看了下，讲得挺好，就记录笔记。网址：点击进入">
-<meta name="twitter:image" content="http://yoursite.com/2018/10/27/images/browser-layers.png">
+<meta name="twitter:image" content="http://yoursite.com/images/browser-layers.png">
 
 
 
@@ -405,7 +405,7 @@
         <p>无意中看到一篇介绍浏览器工作原理的网站，简单看了下，讲得挺好，就记录笔记。网址：<a href="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/" target="_blank" rel="noopener">点击进入</a></p>
 <a id="more"></a>
 <p>先看看浏览器组成：</p>
-<p><img src="../images/browser-layers.png" alt="浏览器组成"></p>
+<p><img src="/images/browser-layers.png" alt="浏览器组成"></p>
 <p>先看看主要组成：</p>
 <ul>
 <li>用户界面：就是用户看到的部分，包括地址栏、前进/后退、书签等等</li>
@@ -417,14 +417,14 @@
 <li>数据存储：比如<code>Cookie</code>和<code>Storage</code>或者轻量数据库等</li>
 </ul>
 <p>以<code>WebKit</code>内核为例，看看它的主流程：</p>
-<p><img src="../images/webkitflow.png" alt="WebKit主流程"></p>
+<p><img src="/images/webkitflow.png" alt="WebKit主流程"></p>
 <h3 id="DOM解析"><a href="#DOM解析" class="headerlink" title="DOM解析"></a>DOM解析</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      Hello World</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span> <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"example.png"</span>/&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>上面是<code>HTML</code>文档，经过<code>HTML Parser</code>可以解析成<code>DOM</code>树：</p>
-<p><img src="../images/dom-tree.png" alt="DOM树"></p>
+<p><img src="/images/dom-tree.png" alt="DOM树"></p>
 <h3 id="CSS解析"><a href="#CSS解析" class="headerlink" title="CSS解析"></a>CSS解析</h3><p>CSS解析后，主要生成CSS的规则树：</p>
-<p><img src="../images/CSSOM.png" alt="解析CSS"></p>
+<p><img src="/images/CSSOM.png" alt="解析CSS"></p>
 <h3 id="渲染树"><a href="#渲染树" class="headerlink" title="渲染树"></a>渲染树</h3><p>然后浏览器会将DOM和CSSOM合成一个渲染树。它和DOM是对应的，但不是一一对应。比如<code>head</code>不会放入渲染树，<code>display: none</code>样式的元素也不会在渲染树中。</p>
-<p><img src="../images/render-tree.png" alt="渲染树"></p>
+<p><img src="/images/render-tree.png" alt="渲染树"></p>
 <p>在Webkit中，样式规则<code>attach</code>到DOM中，如灰色箭头所指。</p>
 <h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><p>由于渲染树不包含位置和大小信息，需要进行计算，这个过程叫布局或者重排。它从根节点开始递归，直到遍历所有的层次结构，为每个需要计算的元素计算几何尺寸。</p>
 <h3 id="绘制"><a href="#绘制" class="headerlink" title="绘制"></a>绘制</h3><p>最后就是将以上信息绘制到电脑屏幕上，绘制顺序：背景颜色-&gt;背景图片-&gt;边框-&gt;子代-&gt;轮廓。</p>

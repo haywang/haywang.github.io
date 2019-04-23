@@ -110,13 +110,13 @@
 <meta property="og:site_name" content="前端手册">
 <meta property="og:description" content="上一篇中，用了很大篇幅找到Vue函数，发现它由构造函数+原型继承方式进行继承，这篇就看看new之后做了什么。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2018/09/15/Vue源码分析2/images/find-vue-function.png">
-<meta property="og:image" content="http://yoursite.com/2018/09/15/Vue源码分析2/images/vue-init.png">
-<meta property="og:updated_time" content="2019-04-09T10:03:11.924Z">
+<meta property="og:image" content="http://yoursite.com/images/find-vue-function.png">
+<meta property="og:image" content="http://yoursite.com/images/vue-init.png">
+<meta property="og:updated_time" content="2019-04-23T12:39:53.272Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue源码分析2">
 <meta name="twitter:description" content="上一篇中，用了很大篇幅找到Vue函数，发现它由构造函数+原型继承方式进行继承，这篇就看看new之后做了什么。">
-<meta name="twitter:image" content="http://yoursite.com/2018/09/15/Vue源码分析2/images/find-vue-function.png">
+<meta name="twitter:image" content="http://yoursite.com/images/find-vue-function.png">
 
 
 
@@ -416,9 +416,9 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// platforms/web/runtime/index.js</span></span><br><span class="line"><span class="comment">// install platform patch function</span></span><br><span class="line">Vue.prototype.__patch__ = inBrowser ? patch : noop</span><br><span class="line"><span class="comment">// platforms/web/runtime/patch.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> patch = createPatchFunction(&#123; nodeOps, modules &#125;)</span><br><span class="line"><span class="comment">// core/vdom/patch.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">createPatchFunction</span> (<span class="params">backend</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 一堆子函数定义</span></span><br><span class="line">    [...]</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">patch</span> (<span class="params">oldVnode, vnode, hydrating, removeOnly, parentElm, refElm</span>) </span>&#123;</span><br><span class="line">		createElm(vnode, insertedVnodeQueue, parentElm, refElm)/</span><br><span class="line">	    <span class="comment">// create new node</span></span><br><span class="line">        createElm(</span><br><span class="line">          vnode,</span><br><span class="line">          insertedVnodeQueue,</span><br><span class="line">          <span class="comment">// extremely rare edge case: do not insert if old element is in a</span></span><br><span class="line">          <span class="comment">// leaving transition. Only happens when combining transition +</span></span><br><span class="line">          <span class="comment">// keep-alive + HOCs. (#4590)</span></span><br><span class="line">          oldElm._leaveCb ? <span class="literal">null</span> : parentElm,</span><br><span class="line">          nodeOps.nextSibling(oldElm)</span><br><span class="line">        )</span><br><span class="line">		invokeInsertHook(vnode, insertedVnodeQueue, isInitialPatch)</span><br><span class="line">    	<span class="keyword">return</span> vnode.elm</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>因为node环境没有DOM，所以patch跟平台有关，需要区别对待。</p>
 <p>整理上一篇和这一篇，可以画出寻找Vue函数的流程图：</p>
-<p><img src="images/find-vue-function.png" alt="寻找Vue的类"></p>
+<p><img src="/images/find-vue-function.png" alt="寻找Vue的类"></p>
 <p>和初始化的过程：</p>
-<p><img src="images/vue-init.png" alt="Vue初始化过程"></p>
+<p><img src="/images/vue-init.png" alt="Vue初始化过程"></p>
 <p>初始化流程：调用_init-&gt;vm.$mount-&gt;mountComponent-&gt;createEmptyVNode-&gt;render-&gt;update-&gt;patch-&gt;new Watch，走完之后，就将虚拟DOM渲染成真实的DOM。</p>
 
       

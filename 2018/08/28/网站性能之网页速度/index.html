@@ -110,12 +110,12 @@
 <meta property="og:site_name" content="前端手册">
 <meta property="og:description" content="最近不停地加班+重复做页面+各种接口调试。扮演前端+人肉测试，所谓人肉测试就是做好页面，手动测试接口。因为用户提交的数据需要从数据库获取，纯白盒测试可能测不了什么问题。稍微有点空闲时间，就静下心来精进自己的技能。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2018/08/28/网站性能之网页速度/images/page-load-time-cycle.png">
-<meta property="og:updated_time" content="2019-03-22T08:28:45.008Z">
+<meta property="og:image" content="http://yoursite.com/images/page-load-time-cycle.png">
+<meta property="og:updated_time" content="2019-04-23T12:45:14.251Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网站性能之网页速度">
 <meta name="twitter:description" content="最近不停地加班+重复做页面+各种接口调试。扮演前端+人肉测试，所谓人肉测试就是做好页面，手动测试接口。因为用户提交的数据需要从数据库获取，纯白盒测试可能测不了什么问题。稍微有点空闲时间，就静下心来精进自己的技能。">
-<meta name="twitter:image" content="http://yoursite.com/2018/08/28/网站性能之网页速度/images/page-load-time-cycle.png">
+<meta name="twitter:image" content="http://yoursite.com/images/page-load-time-cycle.png">
 
 
 
@@ -404,7 +404,7 @@
 <p>我认为，一个人的精力有限，在工作中全栈可能性比较小，在项目紧急的情况下，更是没法一会做前端，一会做后端。那为何要学习后端知识呢？为了更好地做好前端。另外，业余时间有一个自己的项目，既可以锻炼快速开发能力，也可以提高学习兴趣，更有成就感。即使项目挣钱，也是无法跟工作相比的，纯当额外的bonus吧！</p>
 <p>最近订阅左耳朵耗子的专栏，看到推荐的一本在线电子书《Designing for Performance》，链接在此：<a href="http://designingforperformance.com/" target="_blank" rel="noopener">点击查看</a></p>
 <p>之前除了面试时遇到性能问题，后面工作中没怎么关心，正好学习下，以后几篇文章都是根据我的理解进行整理。</p>
-<h2 id="浏览器如何渲染？"><a href="#浏览器如何渲染？" class="headerlink" title="浏览器如何渲染？"></a>浏览器如何渲染？</h2><p><img src="images/page-load-time-cycle.png" alt="page-load-time-cycle"></p>
+<h2 id="浏览器如何渲染？"><a href="#浏览器如何渲染？" class="headerlink" title="浏览器如何渲染？"></a>浏览器如何渲染？</h2><p><img src="/images/page-load-time-cycle.png" alt="page-load-time-cycle"></p>
 <p>用户输入URL后，浏览器会进行DNS查找，找出域名对应的IP地址，在一段时间内浏览器会记住这个IP，这样不用每次都去查找。浏览器连接上服务器后，浏览器会发送请求，服务器会解析并返回数据（包括图像、HTML、CSS、JavaScript或者视频），等下载完后，浏览器就渲染成用户可见的网页。</p>
 <p>那如何衡量服务器响应速度呢？接收第一字节数据的时间，简写TTFB（time to first byte）。开始接收到数据之后，还会慢慢下载图片、CSS、JS文件等，特别是下载JS文件会阻塞渲染。</p>
 <p>其实，接收到数据并不代表用户就可以看见网页，还要等待下载和渲染。浏览器会先解析HTML：把原始的字节数据变成字符串，字符串变成标签比如<code>body</code>，标签再变成拥有属性和规则的对象。最后，这些对象再链接成数据结构。最最后，创建DOM树，以供后面的渲染；在解析HTML时，会下载CSS文件，解析过程跟HTML类似，只是最终变成CSSOM（CSS Object Model）；最终，浏览器会把DOM和CSSOM合成一个渲染树，会计算每个可见元素的大小和位置（<code>display:none</code>不会放进渲染树），使用工具可以创建每隔一定时间的快照。优化方法：异步加载、首页优先请求、缓存静态资源、用户优先的动作最先展示。</p>
